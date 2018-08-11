@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>v2.2.0 - Deis Workflow Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "v2.2.0";
+    var mkdocs_page_input_path = "changelogs/v2.2.0.md";
+    var mkdocs_page_url = "/workflow/changelogs/v2.2.0/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-42867143-3', 'auto');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Deis Workflow Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Home</span>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Quick Start</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../quickstart/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../quickstart/install-cli-tools/">Install CLI Tools</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">AWS</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/aws/boot/">Boot</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/aws/dns/">DNS</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/aws/install-aws/">Install Workflow</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Azure</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/azure-acs/boot/">Boot</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/azure-acs/dns/">DNS</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/azure-acs/install-azure-acs/">Install Workflow</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">GKE</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/gke/boot/">Boot</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/gke/dns/">DNS</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/gke/install-gke/">Install Workflow</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Minikube</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/minikube/boot/">Boot</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/minikube/dns/">DNS</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/minikube/install-minikube/">Install Workflow</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../quickstart/deploy-an-app/">Deploy Your First App</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Understanding Workflow</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../understanding-workflow/concepts/">Concepts</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../understanding-workflow/architecture/">Architecture</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../understanding-workflow/components/">Components</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Installing Workflow</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/system-requirements/">System Requirements</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/">Installing Workflow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/configuring-object-storage/">Configuring Object Storage</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/configuring-postgres/">Configuring Postgres</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/configuring-registry/">Configuring the Registry</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/chart-provenance/">Chart Provenance</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/experimental-native-ingress/">Experimental Native Ingress</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Users</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../users/cli/">Command Line Interface</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../users/registration/">Users and Registration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../users/ssh-keys/">SSH Keys</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Applications</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../applications/deploying-apps/">Deploying Apps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../applications/using-buildpacks/">Buildpacks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../applications/using-dockerfiles/">Dockerfiles</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../applications/using-docker-images/">Docker Images</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../applications/managing-app-processes/">Managing App Processes</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../applications/managing-app-configuration/">Managing App Configuration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../applications/managing-app-lifecycle/">Managing App Lifecycle</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../applications/inter-app-communication/">Inter-app Communication</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../applications/managing-resource-limits/">Resource Limits</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../applications/domains-and-routing/">Domains and Routing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../applications/ssl-certificates/">SSL Certificates</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Managing Workflow</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/tuning-component-settings/">Tuning Component Settings</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/configuring-load-balancers/">Configuring Load Balancers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/configuring-dns/">Configuring DNS</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/deploy-hooks/">Deploy Hooks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/platform-logging/">Platform Logging</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/platform-monitoring/">Platform Monitoring</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/production-deployments/">Production Deployments</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/security-considerations/">Security Considerations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/platform-ssl/">Platform SSL</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/upgrading-workflow/">Upgrading Workflow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/extending-workflow/">Extending Workflow</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Troubleshooting</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../troubleshooting/">Troubleshooting Workflow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../troubleshooting/kubectl/">Troubleshooting using Kubectl</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../troubleshooting/applications/">Troubleshooting Applications</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Roadmap</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../roadmap/planning-process/">Planning Process</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../roadmap/roadmap/">Roadmap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../roadmap/releases/">Releases</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Contributing</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../contributing/overview/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/design-documents/">Design Documents</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/development-environment/">Development Environment</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/testing/">Testing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/submitting-a-pull-request/">Submitting a Pull Request</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/community/">Community</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/triaging-issues/">Triaging Issues</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/conduct/">Conduct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/maintainers/">Maintainers</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Reference Guide</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/migration/">Migrating from Deis v1</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/creating-a-self-signed-ssl-certificate/">Creating a Self-Signed SSL Certificate</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/terms/">Terms</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/controller-api/v2.0/">Controller API v2.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/controller-api/v2.1/">Controller API v2.1</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/controller-api/v2.2/">Controller API v2.2</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/controller-api/v2.3/">Controller API v2.3</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Changelogs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../v2.18.0/">v2.18.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../v2.17.0/">v2.17.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../v2.16.0/">v2.16.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../v2.15.0/">v2.15.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../v2.14.0/">v2.14.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../v2.13.0/">v2.13.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../v2.12.0/">v2.12.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../v2.11.0/">v2.11.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../v2.10.0/">v2.10.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../v2.9.1/">v2.9.1</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../v2.9.0/">v2.9.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../v2.8.0/">v2.8.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../v2.7.0/">v2.7.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../v2.6.0/">v2.6.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../v2.5.0/">v2.5.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../v2.4.2/">v2.4.2</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../v2.4.1/">v2.4.1</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../v2.4.0/">v2.4.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../v2.3.0/">v2.3.0</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">v2.2.0</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#workflow-v210-v220">Workflow v2.1.0 -&gt; v2.2.0</a></li>
+    
+
+    <li class="toctree-l3"><a href="#features">Features</a></li>
+    
+
+    <li class="toctree-l3"><a href="#fixes">Fixes</a></li>
+    
+
+    <li class="toctree-l3"><a href="#documentation">Documentation</a></li>
+    
+
+    <li class="toctree-l3"><a href="#maintenance">Maintenance</a></li>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../v2.1.0/">v2.1.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../v2.0.0/">v2.0.0</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Deis Workflow Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Changelogs &raquo;</li>
+        
+      
+    
+    <li>v2.2.0</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="workflow-v210-v220">Workflow v2.1.0 -&gt; v2.2.0<a class="headerlink" href="#workflow-v210-v220" title="Permanent link">&para;</a></h3>
+<h3 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/deis/fluentd/commit/b59bbbc308628b356291984e3506e233ec1227ed"><code>b59bbbc</code></a> (fluentd) - fluentd: Adding sumologic plugin support</li>
+<li><a href="https://github.com/deis/logger/commit/424523c50cb893ae6048fe8a7b35c3486a4e5e07"><code>424523c</code></a> (logger) - storage: Add redis storage adapter</li>
+<li><a href="https://github.com/deis/logger/commit/2da72a5f99ff58c723b92fd9ff5b1cc3a4caec6b"><code>2da72a5</code></a> (logger) - redis: Optimize with more aggresive pipelining</li>
+<li><a href="https://github.com/deis/logger/commit/0c82466f929a096df0f19c30ea56e250b9b0062c"><code>0c82466</code></a> (logger) - storage: Make redis the default storage adapter</li>
+<li><a href="https://github.com/deis/monitor/commit/2f92eca55942e5fef07c9b295843e4fd73c9a294"><code>2f92eca</code></a> (monitor) - telegraf, grafana: Start collecting redis metrics</li>
+<li><a href="https://github.com/deis/charts/commit/c9718e4c6bb373fb34e80e0c5fb05bbf21b11374"><code>c9718e4</code></a> (charts) - logger: Add redis instance for use by logger</li>
+<li><a href="https://github.com/deis/charts/commit/7d400693b352803b8e3695cba3bf54a00ad1dcf4"><code>7d40069</code></a> (charts) - swift: add support for swift storage</li>
+<li><a href="https://github.com/deis/charts/commit/d6992e199cd30544caa820ce5aa85626534e7eb3"><code>d6992e1</code></a> (charts) - telegraf: Configure telegraf to start fetching redis metrics</li>
+<li><a href="https://github.com/deis/workflow-cli/commit/0ae9d909881ee7eac18d3f943ecaa473ad865df3"><code>0ae9d90</code></a> (workflow-cli) - deis: add <code>deis shortcuts</code> command</li>
+<li><a href="https://github.com/deis/workflow-cli/commit/2862f056e278996a74bea224ec246366c5952528"><code>2862f05</code></a> (workflow-cli) - colors: reserve magenta for controller log messages (#132)</li>
+<li><a href="https://github.com/deis/controller/commit/8a61e63d207c9dc76066fd119110696a6e034f87"><code>8a61e63</code></a> (controller) - scheduler: add support for set based requirement filtering via the kubernetes API</li>
+<li><a href="https://github.com/deis/controller/commit/47b5b086ef268d80cc8d91ce0b49423bacb8e75b"><code>47b5b08</code></a> (controller) - IDN: add support for international domains</li>
+<li><a href="https://github.com/deis/controller/commit/32be50a323bb73683474ad3dd03b4dada6589bdf"><code>32be50a</code></a> (controller) - scheduler: sort env vars and secrets by keys for easier hashing</li>
+<li><a href="https://github.com/deis/controller/commit/c3c2494514547d328fc933ba3eb4bf3db723ab82"><code>c3c2494</code></a> (controller) - add Deployments support behind a feature flag</li>
+<li><a href="https://github.com/deis/controller/commit/edb0383a6446d048d2a9b14512534caccd74d2d1"><code>edb0383</code></a> (controller) - scheduler: feat(scheduler) prepend [namespace] to Scheduler log message for better traceability</li>
+<li><a href="https://github.com/deis/controller/commit/84b80803ad201bf04f7bf3c031413d90794ace4d"><code>84b8080</code></a> (controller) - app: make deploy timeout configurable globally/per-app via DEIS_DEPLOY_TIMEOUT, default is 2 minutes</li>
+</ul>
+<h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/deis/dockerbuilder/commit/65f8714d6909bf23b4952544b8b0e10e54871571"><code>65f8714</code></a> (dockerbuilder) - objectstore: set properly builder bucket file environment variable</li>
+<li><a href="https://github.com/deis/dockerbuilder/commit/91799230f043c81e726c23fe232d3e80c24b31eb"><code>9179923</code></a> (dockerbuilder) - deploy.py: handle chunked output errors</li>
+<li><a href="https://github.com/deis/dockerbuilder/commit/02112edb7603ba2c2be3e764d9d107ef645329a8"><code>02112ed</code></a> (dockerbuilder) - deploy.py: delay so stderr is logged before pod exits</li>
+<li><a href="https://github.com/deis/logger/commit/93b9c5ce1496654432d35bf4bb51503e4b3a9805"><code>93b9c5c</code></a> (logger) - redis: Pass style checks</li>
+<li><a href="https://github.com/deis/logger/commit/7144c4ef742844b6a5ab4c8d3420d5d86a0ac7d7"><code>7144c4e</code></a> (logger) - rc: Specify use of redis storage adapter</li>
+<li><a href="https://github.com/deis/monitor/commit/9dae9cc9dbefb1314e68de79fe1db3d33ac7f8f2"><code>9dae9cc</code></a> (monitor) - telegraf: Create nsq topic at startup</li>
+<li><a href="https://github.com/deis/monitor/commit/a9b2275da4eb892b986b0d16b44b77f1cfae05f6"><code>a9b2275</code></a> (monitor) - telegraf: Update image default image tag in manifests</li>
+<li><a href="https://github.com/deis/monitor/commit/8fd5adaae198cf88e84abfa84e038ef04f21f3f5"><code>8fd5ada</code></a> (monitor) - grafana: Fix blank dashboards from appearing in dropdown</li>
+<li><a href="https://github.com/deis/monitor/commit/7de06cc302beae72d986b11e28cac319e8a8bc7d"><code>7de06cc</code></a> (monitor) - grafana: Redis cpu graph was not selecting right data</li>
+<li><a href="https://github.com/deis/charts/commit/0492bf8972b8ffe1e7cf0685fe5eed2874ea5bd0"><code>0492bf8</code></a> (charts) - database: Fix logic for selecting off-cluster db</li>
+<li><a href="https://github.com/deis/charts/commit/6fd840784bccfe8d42130117252adafe62627e33"><code>6fd8407</code></a> (charts) - logger: Do not helm keep rc deis-logger-redis</li>
+<li><a href="https://github.com/deis/workflow-cli/commit/c425baf440d283ec1f5434da00b46d56663f5d2f"><code>c425baf</code></a> (workflow-cli) - ps: restarting a single pod created by Deployments was not working</li>
+<li><a href="https://github.com/deis/workflow-cli/commit/bcb8b01dc42f0ce438be2a9da3584ba136af02ac"><code>bcb8b01</code></a> (workflow-cli) - ps: give ps:restart a better understanding between RC and Deployment pods</li>
+<li><a href="https://github.com/deis/workflow-cli/commit/4b2c6d43e45eb926fa67dddb23b306999a486c4d"><code>4b2c6d4</code></a> (workflow-cli) - scale: dont call controller if there is no valid scale pattern</li>
+<li><a href="https://github.com/deis/workflow-cli/commit/32177aa142642dd41d59d2ed322131fc61d2ebbc"><code>32177aa</code></a> (workflow-cli) - settings: don't panic on empty settings file (#134)</li>
+<li><a href="https://github.com/deis/controller/commit/6214d96d52fd9a0e9b0ee6ab098590316f51cd84"><code>6214d96</code></a> (controller) - scheduler: if one RC fails to scale then ensure all other RCs are at the right level</li>
+<li><a href="https://github.com/deis/controller/commit/0bcea133f95e097b073c55e0c44445023c135887"><code>0bcea13</code></a> (controller) - scale: return error message in proper format</li>
+<li><a href="https://github.com/deis/controller/commit/7d24923a06e51dcd1fe5c4a0a3148cb6a1dac37e"><code>7d24923</code></a> (controller) - restart: wait for the pods to be scheduled</li>
+<li><a href="https://github.com/deis/controller/commit/76475691f622e413f33c3b866f2e4ae81aa22b85"><code>7647569</code></a> (controller) - scheduler: cast port to an int from environment (#857)</li>
+<li><a href="https://github.com/deis/controller/commit/b27c816e9ef21a989c68db23c0c98c02f726cf7b"><code>b27c816</code></a> (controller) - boot: change group ownership of docker socket to deis (#804)</li>
+<li><a href="https://github.com/deis/controller/commit/d4415c9e6f0fa6c92b4b3ac2b70857d2c9c8f78a"><code>d4415c9</code></a> (controller) - api: fail when rolling back to v1 (#762)</li>
+<li><a href="https://github.com/deis/controller/commit/1ac6b5489c84f68ace7a0a0050f8fc8988d339c7"><code>1ac6b54</code></a> (controller) - release: return port from get_port for non-routable process types</li>
+<li><a href="https://github.com/deis/controller/commit/a0567eaae4747c466a191fbbe83c846cc521fb0c"><code>a0567ea</code></a> (controller) - api: remove command escaping from v1 (#822)</li>
+<li><a href="https://github.com/deis/controller/commit/f403efb610787faee46225aa9e63f0ae8abeb525"><code>f403efb</code></a> (controller) - tests: sort domains in tests to get past occasional ordering problems which cause test failures</li>
+</ul>
+<h3 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/deis/workflow/commit/dd2b505b51da34bb972a474dcc6ffba632d12d26"><code>dd2b505</code></a> (workflow) - logging,monitoring: Update platform-logging and monitoring docs with recent changes</li>
+<li><a href="https://github.com/deis/workflow/commit/dfb6c8ee8851a2af3847eecb5473b6d2dcc5ce65"><code>dfb6c8e</code></a> (workflow) - install-workflow: note that k8s 1.2.x is required</li>
+<li><a href="https://github.com/deis/workflow/commit/aa40a49f199b83373c38497e2638107644299498"><code>aa40a49</code></a> (workflow) - swift: Add swift as an object storage</li>
+<li><a href="https://github.com/deis/workflow/commit/3e7e865edaaffda156f0f6a595757bf0c81ed0d3"><code>3e7e865</code></a> (workflow) - deployments: add Deployments documentation</li>
+<li><a href="https://github.com/deis/workflow/commit/ee03d284316287c2f473503afe0375eb975a1377"><code>ee03d28</code></a> (workflow) - apps: document <code>DEIS_DEPLOY_TIMEOUT</code> and the nuances around that</li>
+</ul>
+<h3 id="maintenance">Maintenance<a class="headerlink" href="#maintenance" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/deis/slugbuilder/commit/5c289c4cfda9815e0629d8b5f1e3848a612c481f"><code>5c289c4</code></a> (slugbuilder) - buildpacks: update heroku-buildpack-go to v42</li>
+<li><a href="https://github.com/deis/slugbuilder/commit/d5cdd0b83801d3302afbbe7ee9fa04fadc29caca"><code>d5cdd0b</code></a> (slugbuilder) - buildpacks: update heroku-buildpack-php to v108</li>
+<li><a href="https://github.com/deis/slugbuilder/commit/85c82926352390150b72a15efd7826295f23475d"><code>85c8292</code></a> (slugbuilder) - buildpacks: update heroku-buildpack-nodejs to v91</li>
+<li><a href="https://github.com/deis/slugbuilder/commit/165105f366bdfc7a8a33e0c7be2e465a9799d4f3"><code>165105f</code></a> (slugbuilder) - buildpacks: update heroku-buildpack-python to v81</li>
+<li><a href="https://github.com/deis/slugbuilder/commit/9bbed872679ff038ad63f9c4c7b6ee043d0e4b76"><code>9bbed87</code></a> (slugbuilder) - buildpacks: update heroku-buildpack-scala to v71</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../v2.1.0/" class="btn btn-neutral float-right" title="v2.1.0">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../v2.3.0/" class="btn btn-neutral" title="v2.3.0"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../v2.3.0/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../v2.1.0/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../static/js/foundation.js" defer></script>
+      <script src="../../static/js/foundation.dropdown.js" defer></script>
+      <script src="../../static/js/foundation.offcanvas.js" defer></script>
+      <script src="../../static/js/headroom.min.js" defer></script>
+      <script src="../../static/js/adjustments.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

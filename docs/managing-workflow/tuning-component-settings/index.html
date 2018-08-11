@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Tuning Component Settings - Deis Workflow Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Tuning Component Settings";
+    var mkdocs_page_input_path = "managing-workflow/tuning-component-settings.md";
+    var mkdocs_page_url = "/workflow/managing-workflow/tuning-component-settings/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-42867143-3', 'auto');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Deis Workflow Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Home</span>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Quick Start</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../quickstart/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../quickstart/install-cli-tools/">Install CLI Tools</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">AWS</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/aws/boot/">Boot</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/aws/dns/">DNS</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/aws/install-aws/">Install Workflow</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Azure</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/azure-acs/boot/">Boot</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/azure-acs/dns/">DNS</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/azure-acs/install-azure-acs/">Install Workflow</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">GKE</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/gke/boot/">Boot</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/gke/dns/">DNS</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/gke/install-gke/">Install Workflow</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Minikube</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/minikube/boot/">Boot</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/minikube/dns/">DNS</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/minikube/install-minikube/">Install Workflow</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../quickstart/deploy-an-app/">Deploy Your First App</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Understanding Workflow</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../understanding-workflow/concepts/">Concepts</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../understanding-workflow/architecture/">Architecture</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../understanding-workflow/components/">Components</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Installing Workflow</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/system-requirements/">System Requirements</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/">Installing Workflow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/configuring-object-storage/">Configuring Object Storage</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/configuring-postgres/">Configuring Postgres</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/configuring-registry/">Configuring the Registry</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/chart-provenance/">Chart Provenance</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/experimental-native-ingress/">Experimental Native Ingress</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Users</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../users/cli/">Command Line Interface</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../users/registration/">Users and Registration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../users/ssh-keys/">SSH Keys</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Applications</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../applications/deploying-apps/">Deploying Apps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../applications/using-buildpacks/">Buildpacks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../applications/using-dockerfiles/">Dockerfiles</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../applications/using-docker-images/">Docker Images</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../applications/managing-app-processes/">Managing App Processes</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../applications/managing-app-configuration/">Managing App Configuration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../applications/managing-app-lifecycle/">Managing App Lifecycle</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../applications/inter-app-communication/">Inter-app Communication</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../applications/managing-resource-limits/">Resource Limits</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../applications/domains-and-routing/">Domains and Routing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../applications/ssl-certificates/">SSL Certificates</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Managing Workflow</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">Tuning Component Settings</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#tuning-component-settings">Tuning Component Settings</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#setting-resource-limits">Setting Resource limits</a></li>
+        
+            <li><a class="toctree-l4" href="#customizing-the-builder">Customizing the Builder</a></li>
+        
+            <li><a class="toctree-l4" href="#customizing-the-controller">Customizing the Controller</a></li>
+        
+            <li><a class="toctree-l4" href="#customizing-the-database">Customizing the Database</a></li>
+        
+            <li><a class="toctree-l4" href="#customizing-fluentd">Customizing Fluentd</a></li>
+        
+            <li><a class="toctree-l4" href="#customizing-the-logger">Customizing the Logger</a></li>
+        
+            <li><a class="toctree-l4" href="#customizing-the-monitor">Customizing the Monitor</a></li>
+        
+            <li><a class="toctree-l4" href="#customizing-the-registry">Customizing the Registry</a></li>
+        
+            <li><a class="toctree-l4" href="#customizing-the-router">Customizing the Router</a></li>
+        
+            <li><a class="toctree-l4" href="#customizing-workflow-manager">Customizing Workflow Manager</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../configuring-load-balancers/">Configuring Load Balancers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../configuring-dns/">Configuring DNS</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../deploy-hooks/">Deploy Hooks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../platform-logging/">Platform Logging</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../platform-monitoring/">Platform Monitoring</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../production-deployments/">Production Deployments</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../security-considerations/">Security Considerations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../platform-ssl/">Platform SSL</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../upgrading-workflow/">Upgrading Workflow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../extending-workflow/">Extending Workflow</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Troubleshooting</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../troubleshooting/">Troubleshooting Workflow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../troubleshooting/kubectl/">Troubleshooting using Kubectl</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../troubleshooting/applications/">Troubleshooting Applications</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Roadmap</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../roadmap/planning-process/">Planning Process</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../roadmap/roadmap/">Roadmap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../roadmap/releases/">Releases</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Contributing</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../contributing/overview/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/design-documents/">Design Documents</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/development-environment/">Development Environment</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/testing/">Testing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/submitting-a-pull-request/">Submitting a Pull Request</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/community/">Community</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/triaging-issues/">Triaging Issues</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/conduct/">Conduct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/maintainers/">Maintainers</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Reference Guide</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/migration/">Migrating from Deis v1</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/creating-a-self-signed-ssl-certificate/">Creating a Self-Signed SSL Certificate</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/terms/">Terms</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/controller-api/v2.0/">Controller API v2.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/controller-api/v2.1/">Controller API v2.1</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/controller-api/v2.2/">Controller API v2.2</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/controller-api/v2.3/">Controller API v2.3</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Changelogs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.18.0/">v2.18.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.17.0/">v2.17.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.16.0/">v2.16.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.15.0/">v2.15.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.14.0/">v2.14.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.13.0/">v2.13.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.12.0/">v2.12.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.11.0/">v2.11.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.10.0/">v2.10.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.9.1/">v2.9.1</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.9.0/">v2.9.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.8.0/">v2.8.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.7.0/">v2.7.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.6.0/">v2.6.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.5.0/">v2.5.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.4.2/">v2.4.2</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.4.1/">v2.4.1</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.4.0/">v2.4.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.3.0/">v2.3.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.2.0/">v2.2.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.1.0/">v2.1.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.0.0/">v2.0.0</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Deis Workflow Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Managing Workflow &raquo;</li>
+        
+      
+    
+    <li>Tuning Component Settings</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="tuning-component-settings">Tuning Component Settings<a class="headerlink" href="#tuning-component-settings" title="Permanent link">&para;</a></h1>
+<p>Helm Charts are a set of Kubernetes manifests that reflect best practices for deploying an
+application or service on Kubernetes.</p>
+<p>After you add the Deis Chart Repository, you can customize the chart using
+<code>helm inspect values deis/workflow &gt; values.yaml</code> before using <code>helm install</code> to complete the
+installation.</p>
+<p>There are a few ways to customize the respective component:</p>
+<ul>
+<li>
+<p>If the value is exposed in the <code>values.yaml</code> file as derived above, one may modify the section of the component to tune these settings.  The modified value(s) will then take effect at chart installation or release upgrade time via either of the two respective commands:</p>
+<pre class="codehilite"><code>$ helm install deis/workflow --namespace deis -f values.yaml
+$ helm upgrade deis -f values.yaml</code></pre>
+
+
+</li>
+<li>
+<p>If the value hasn't yet been exposed in the <code>values.yaml</code> file, one may edit the component deployment with the tuned setting.  Here we edit the <code>deis-controller</code> deployment:</p>
+<pre class="codehilite"><code>$ kubectl --namespace deis edit deployment deis-controller</code></pre>
+
+
+<p>Add/edit the setting via the appropriate environment variable and value under the <code>env</code> section and save.  The updated deployment will recreate the component pod with the new/modified setting.</p>
+</li>
+<li>
+<p>Lastly, one may also fetch and edit the chart as served by version control/the chart repository itself:</p>
+<pre class="codehilite"><code>$ helm fetch deis/workflow --untar
+$ $EDITOR workflow/charts/controller/templates/controller-deployment.yaml</code></pre>
+
+
+<p>Then run <code>helm install ./workflow --namespace deis --name deis</code> to apply the changes, or <code>helm upgrade deis ./workflow</code> if the cluster is already running.</p>
+</li>
+</ul>
+<h2 id="setting-resource-limits">Setting Resource limits<a class="headerlink" href="#setting-resource-limits" title="Permanent link">&para;</a></h2>
+<p>You can set resource limits to Workflow components by modifying the values.yaml file fetched
+earlier. This file has a section for each Workflow component. To set a limit to any Workflow
+component just add <code>limits_cpu</code>, <code>limits_memory</code> in the section and set them to the appropriate
+values.</p>
+<p>Below is an example of how the builder section of <code>values.yaml</code> might look with CPU and memory
+limits set:</p>
+<pre class="codehilite"><code>builder:
+  org: &quot;deisci&quot;
+  pullPolicy: &quot;Always&quot;
+  dockerTag: &quot;canary&quot;
+  limits_cpu: &quot;100m&quot;
+  limits_memory: &quot;50Mi&quot;</code></pre>
+
+
+<h2 id="customizing-the-builder">Customizing the Builder<a class="headerlink" href="#customizing-the-builder" title="Permanent link">&para;</a></h2>
+<p>The following environment variables are tunable for the <a href="../../understanding-workflow/components/#builder">Builder</a> component:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DEBUG</td>
+<td>Enable debug log output (default: false)</td>
+</tr>
+<tr>
+<td>BUILDER_POD_NODE_SELECTOR</td>
+<td>A node selector setting for builder job. As it may sometimes consume a lot of node resources, one may want a given builder job to run in a specific node only, so it won't affect critical nodes. for example <code>pool:testing,disk:magnetic</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="customizing-the-controller">Customizing the Controller<a class="headerlink" href="#customizing-the-controller" title="Permanent link">&para;</a></h2>
+<p>The following environment variables are tunable for the <a href="../../understanding-workflow/components/#controller">Controller</a> component:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>REGISTRATION_MODE</td>
+<td>set registration to "enabled", "disabled", or "admin_only" (default: "admin_only")</td>
+</tr>
+<tr>
+<td>GUNICORN_WORKERS</td>
+<td>number of <a href="http://gunicorn.org/">gunicorn</a> workers spawned to process requests (default: CPU cores * 4 + 1)</td>
+</tr>
+<tr>
+<td>RESERVED_NAMES</td>
+<td>a comma-separated list of names which applications cannot reserve for routing (default: "deis, deis-builder, deis-workflow-manager")</td>
+</tr>
+<tr>
+<td>SLUGRUNNER_IMAGE_NAME</td>
+<td>the image used to run buildpack application slugs (default: "quay.io/deisci/slugrunner:canary")</td>
+</tr>
+<tr>
+<td>DEIS_DEPLOY_HOOK_URLS</td>
+<td>a comma-separated list of URLs to send <a href="../deploy-hooks/#http-post-hook">deploy hooks</a> to.</td>
+</tr>
+<tr>
+<td>DEIS_DEPLOY_HOOK_SECRET_KEY</td>
+<td>a private key used to compute the HMAC signature for deploy hooks.</td>
+</tr>
+<tr>
+<td>DEIS_DEPLOY_REJECT_IF_PROCFILE_MISSING</td>
+<td>rejects a deploy if the previous build had a Procfile but the current deploy is missing it. A 409 is thrown in the API. Prevents accidental process types removal. (default: "false", allowed values: "true", "false")</td>
+</tr>
+<tr>
+<td>DEIS_DEPLOY_PROCFILE_MISSING_REMOVE</td>
+<td>when turned on (default) any missing process type in a Procfile compared to the previous deploy is removed. When set to false will allow an empty Procfile to go through without removing missing process types, note that new images, configs and so on will get updated on all proc types.  (default: "true", allowed values: "true", "false")</td>
+</tr>
+<tr>
+<td>DEIS_DEFAULT_CONFIG_TAGS</td>
+<td>set tags for all applications by default, for example: '{"role": "worker"}'. (default: '')</td>
+</tr>
+<tr>
+<td>KUBERNETES_NAMESPACE_DEFAULT_QUOTA_SPEC</td>
+<td>set resource quota to application namespace by setting <a href="http://kubernetes.io/docs/admin/resourcequota/">ResourceQuota</a> spec, for example: <code>{"spec":{"hard":{"pods":"10"}}}</code>, restrict app owner to spawn more then 10 pods (default: "", no quota will be applied to namespace)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ldap-authentication-settings">LDAP authentication settings<a class="headerlink" href="#ldap-authentication-settings" title="Permanent link">&para;</a></h3>
+<p>Configuration options for LDAP authentication are detailed <a href="https://pythonhosted.org/django-auth-ldap/reference.html">here</a>.</p>
+<p>The following environment variables are available for enabling LDAP
+authentication of user accounts in the <a href="../../understanding-workflow/components/#controller">Controller</a> component:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LDAP_ENDPOINT</td>
+<td>The URI of the LDAP server. If not specified, LDAP authentication is not enabled (default: "", example: <code>ldap://hostname</code>).</td>
+</tr>
+<tr>
+<td>LDAP_BIND_DN</td>
+<td>The distinguished name to use when binding to the LDAP server (default: "")</td>
+</tr>
+<tr>
+<td>LDAP_BIND_PASSWORD</td>
+<td>The password to use with LDAP_BIND_DN (default: "")</td>
+</tr>
+<tr>
+<td>LDAP_USER_BASEDN</td>
+<td>The distinguished name of the search base for user names (default: "")</td>
+</tr>
+<tr>
+<td>LDAP_USER_FILTER</td>
+<td>The name of the login field in the users search base (default: "username")</td>
+</tr>
+<tr>
+<td>LDAP_GROUP_BASEDN</td>
+<td>The distinguished name of the search base for user's groups names (default: "")</td>
+</tr>
+<tr>
+<td>LDAP_GROUP_FILTER</td>
+<td>The filter for user's groups (default: "", example: <code>objectClass=person</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="global-and-per-application-settings">Global and per application settings<a class="headerlink" href="#global-and-per-application-settings" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DEIS_DEPLOY_BATCHES</td>
+<td>the number of pods to bring up and take down sequentially during a scale (default: number of available nodes)</td>
+</tr>
+<tr>
+<td>DEIS_DEPLOY_TIMEOUT</td>
+<td>deploy timeout in seconds per deploy batch (default: 120)</td>
+</tr>
+<tr>
+<td>IMAGE_PULL_POLICY</td>
+<td>the kubernetes <a href="http://kubernetes.io/docs/user-guide/images/">image pull policy</a> for application images (default: "IfNotPresent") (allowed values: "Always", "IfNotPresent")</td>
+</tr>
+<tr>
+<td>KUBERNETES_DEPLOYMENTS_REVISION_HISTORY_LIMIT</td>
+<td>how many <a href="http://kubernetes.io/docs/user-guide/deployments/#revision-history-limit">revisions</a> Kubernetes keeps around of a given Deployment (default: all revisions)</td>
+</tr>
+<tr>
+<td>KUBERNETES_POD_TERMINATION_GRACE_PERIOD_SECONDS</td>
+<td>how many seconds kubernetes waits for a pod to finish work after a SIGTERM before sending SIGKILL (default: 30)</td>
+</tr>
+</tbody>
+</table>
+<p>See the <a href="../../applications/deploying-apps/">Deploying Apps</a> guide for more detailed information on those.</p>
+<h2 id="customizing-the-database">Customizing the Database<a class="headerlink" href="#customizing-the-database" title="Permanent link">&para;</a></h2>
+<p>The following environment variables are tunable for the <a href="../../understanding-workflow/components/#database">Database</a> component:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BACKUP_FREQUENCY</td>
+<td>how often the database should perform a base backup (default: "12h")</td>
+</tr>
+<tr>
+<td>BACKUPS_TO_RETAIN</td>
+<td>number of base backups the backing store should retain (default: 5)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="customizing-fluentd">Customizing Fluentd<a class="headerlink" href="#customizing-fluentd" title="Permanent link">&para;</a></h2>
+<p>The following values can be changed in the <code>values.yaml</code> file or by using the <code>--set</code> flag with the Helm CLI. </p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>syslog.host</td>
+<td>""</td>
+<td>Host value of a syslog endpoint</td>
+</tr>
+<tr>
+<td>syslog.port</td>
+<td>""</td>
+<td>Port value of a syslog endpoint</td>
+</tr>
+<tr>
+<td>sources.start_script</td>
+<td>false</td>
+<td>Capture kubernetes start script logs</td>
+</tr>
+<tr>
+<td>sources.docker</td>
+<td>false</td>
+<td>Capture docker daemon logs</td>
+</tr>
+<tr>
+<td>sources.etcd</td>
+<td>false</td>
+<td>Capture etcd logs</td>
+</tr>
+<tr>
+<td>sources.kubelet</td>
+<td>false</td>
+<td>Capture kubelet logs</td>
+</tr>
+<tr>
+<td>sources.kube_api</td>
+<td>false</td>
+<td>Capture Kubernetes API logs</td>
+</tr>
+<tr>
+<td>sources.controller</td>
+<td>false</td>
+<td>Capture Kubernetes Controller logs</td>
+</tr>
+<tr>
+<td>sources.scheduler</td>
+<td>false</td>
+<td>Capture Kubernetes Scheduler logs</td>
+</tr>
+<tr>
+<td>output.disable_deis</td>
+<td>false</td>
+<td>Disable the Deis output plugin</td>
+</tr>
+<tr>
+<td>boot.install_build_tools</td>
+<td>false</td>
+<td>Install the build tools package. This is useful when using custom plugins</td>
+</tr>
+<tr>
+<td>daemon_environment</td>
+<td></td>
+<td>Takes key-value pairs and turns them into environment variables.</td>
+</tr>
+</tbody>
+</table>
+<p>For more information about the various environment variables that can be set please see the <a href="https://github.com/deis/fluentd/blob/master/README.md">README</a></p>
+<h2 id="customizing-the-logger">Customizing the Logger<a class="headerlink" href="#customizing-the-logger" title="Permanent link">&para;</a></h2>
+<p>The following environment variables are tunable for the <a href="../../understanding-workflow/components/#logger-fluentd-logger">Logger</a> component:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>STORAGE_ADAPTER</td>
+<td>How to store logs that are sent to the logger. Legal values are "file", "memory", and "redis". (default: "redis")</td>
+</tr>
+<tr>
+<td>NUMBER_OF_LINES</td>
+<td>How many lines to store in the ring buffer (default: 1000)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="customizing-the-monitor">Customizing the Monitor<a class="headerlink" href="#customizing-the-monitor" title="Permanent link">&para;</a></h2>
+<h3 id="grafana"><a href="https://grafana.com/">Grafana</a><a class="headerlink" href="#grafana" title="Permanent link">&para;</a></h3>
+<p>We have exposed some of the more useful configuration values directly in the chart. This allows them to be set using either the <code>values.yaml</code> file or by using the <code>--set</code> flag with the Helm CLI. You can see these options below:</p>
+<p>Setting           | Default Value  | Description
+----------------- | -------------- |------------ |
+user   | "admin" | The first user created in the database (this user has admin privileges)
+password | "admin" | Password for the first user.
+allow_sign_up | "true" | Allows users to sign up for an account.</p>
+<p>For a list of other options you can set by using environment variables please see the <a href="https://github.com/deis/monitor/blob/master/grafana/rootfs/usr/share/grafana/grafana.ini.tpl">configuration file</a> in Github.</p>
+<h3 id="telegraf"><a href="https://docs.influxdata.com/telegraf">Telegraf</a><a class="headerlink" href="#telegraf" title="Permanent link">&para;</a></h3>
+<p>For a list of configuration values that can be set by using environment variables please see the following <a href="https://github.com/deis/monitor/blob/master/telegraf/rootfs/config.toml.tpl">configuration file</a>.</p>
+<h3 id="influxdb"><a href="https://docs.influxdata.com/influxdb">InfluxDB</a><a class="headerlink" href="#influxdb" title="Permanent link">&para;</a></h3>
+<p>You can find a list of values that can be set using environment variables <a href="https://github.com/deis/monitor/blob/master/influxdb/rootfs/home/influxdb/config.toml.tpl">here</a>.</p>
+<h2 id="customizing-the-registry">Customizing the Registry<a class="headerlink" href="#customizing-the-registry" title="Permanent link">&para;</a></h2>
+<p>The <a href="../../understanding-workflow/components/#registry">Registry</a> component can be tuned by following the
+<a href="https://github.com/deis/distribution/blob/master/docs/configuration.md">deis/distribution config doc</a>.</p>
+<h2 id="customizing-the-router">Customizing the Router<a class="headerlink" href="#customizing-the-router" title="Permanent link">&para;</a></h2>
+<p>The majority of router settings are tunable through annotations, which allows the router to be
+re-configured with zero downtime post-installation. You can find the list of annotations to tune
+<a href="https://github.com/deis/router#annotations">here</a>.</p>
+<p>The following environment variables are tunable for the <a href="../../understanding-workflow/components/#router">Router</a> component:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POD_NAMESPACE</td>
+<td>The pod namespace the router resides in. This is set by the <a href="http://kubernetes.io/docs/user-guide/downward-api/">Kubernetes downward API</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="customizing-workflow-manager">Customizing Workflow Manager<a class="headerlink" href="#customizing-workflow-manager" title="Permanent link">&para;</a></h2>
+<p>The following environment variables are tunable for <a href="../../understanding-workflow/components/#workflow-manager">Workflow Manager</a>:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CHECK_VERSIONS</td>
+<td>Enables the external version check at <a href="https://versions.deis.com/">https://versions.deis.com/</a> (default: "true")</td>
+</tr>
+<tr>
+<td>POLL_INTERVAL_SEC</td>
+<td>The interval when Workflow Manager performs a version check, in seconds (default: 43200, or 12 hours)</td>
+</tr>
+<tr>
+<td>VERSIONS_API_URL</td>
+<td>The versions API URL (default: "<a href="https://versions-staging.deis.com">https://versions-staging.deis.com</a>")</td>
+</tr>
+<tr>
+<td>DOCTOR_API_URL</td>
+<td>The doctor API URL (default: "<a href="https://doctor-staging.deis.com">https://doctor-staging.deis.com</a>")</td>
+</tr>
+<tr>
+<td>API_VERSION</td>
+<td>The version number Workflow Manager sends to the versions API (default: "v2")</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../configuring-load-balancers/" class="btn btn-neutral float-right" title="Configuring Load Balancers">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../applications/ssl-certificates/" class="btn btn-neutral" title="SSL Certificates"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../applications/ssl-certificates/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../configuring-load-balancers/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../static/js/foundation.js" defer></script>
+      <script src="../../static/js/foundation.dropdown.js" defer></script>
+      <script src="../../static/js/foundation.offcanvas.js" defer></script>
+      <script src="../../static/js/headroom.min.js" defer></script>
+      <script src="../../static/js/adjustments.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Managing App Processes - Deis Workflow Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Managing App Processes";
+    var mkdocs_page_input_path = "applications/managing-app-processes.md";
+    var mkdocs_page_url = "/workflow/applications/managing-app-processes/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-42867143-3', 'auto');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Deis Workflow Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Home</span>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Quick Start</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../quickstart/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../quickstart/install-cli-tools/">Install CLI Tools</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">AWS</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/aws/boot/">Boot</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/aws/dns/">DNS</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/aws/install-aws/">Install Workflow</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Azure</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/azure-acs/boot/">Boot</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/azure-acs/dns/">DNS</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/azure-acs/install-azure-acs/">Install Workflow</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">GKE</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/gke/boot/">Boot</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/gke/dns/">DNS</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/gke/install-gke/">Install Workflow</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Minikube</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/minikube/boot/">Boot</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/minikube/dns/">DNS</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/minikube/install-minikube/">Install Workflow</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../quickstart/deploy-an-app/">Deploy Your First App</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Understanding Workflow</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../understanding-workflow/concepts/">Concepts</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../understanding-workflow/architecture/">Architecture</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../understanding-workflow/components/">Components</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Installing Workflow</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/system-requirements/">System Requirements</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/">Installing Workflow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/configuring-object-storage/">Configuring Object Storage</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/configuring-postgres/">Configuring Postgres</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/configuring-registry/">Configuring the Registry</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/chart-provenance/">Chart Provenance</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/experimental-native-ingress/">Experimental Native Ingress</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Users</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../users/cli/">Command Line Interface</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../users/registration/">Users and Registration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../users/ssh-keys/">SSH Keys</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Applications</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../deploying-apps/">Deploying Apps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../using-buildpacks/">Buildpacks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../using-dockerfiles/">Dockerfiles</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../using-docker-images/">Docker Images</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Managing App Processes</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#managing-application-processes">Managing Application Processes</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#default-process-types">Default Process Types</a></li>
+        
+            <li><a class="toctree-l4" href="#declaring-process-types">Declaring Process Types</a></li>
+        
+            <li><a class="toctree-l4" href="#scaling-processes">Scaling Processes</a></li>
+        
+            <li><a class="toctree-l4" href="#autoscale">Autoscale</a></li>
+        
+            <li><a class="toctree-l4" href="#web-vs-cmd-process-types">Web vs Cmd Process Types</a></li>
+        
+            <li><a class="toctree-l4" href="#restarting-an-application-processes">Restarting an Application Processes</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing-app-configuration/">Managing App Configuration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing-app-lifecycle/">Managing App Lifecycle</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../inter-app-communication/">Inter-app Communication</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing-resource-limits/">Resource Limits</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../domains-and-routing/">Domains and Routing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ssl-certificates/">SSL Certificates</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Managing Workflow</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/tuning-component-settings/">Tuning Component Settings</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/configuring-load-balancers/">Configuring Load Balancers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/configuring-dns/">Configuring DNS</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/deploy-hooks/">Deploy Hooks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/platform-logging/">Platform Logging</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/platform-monitoring/">Platform Monitoring</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/production-deployments/">Production Deployments</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/security-considerations/">Security Considerations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/platform-ssl/">Platform SSL</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/upgrading-workflow/">Upgrading Workflow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/extending-workflow/">Extending Workflow</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Troubleshooting</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../troubleshooting/">Troubleshooting Workflow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../troubleshooting/kubectl/">Troubleshooting using Kubectl</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../troubleshooting/applications/">Troubleshooting Applications</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Roadmap</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../roadmap/planning-process/">Planning Process</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../roadmap/roadmap/">Roadmap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../roadmap/releases/">Releases</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Contributing</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../contributing/overview/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/design-documents/">Design Documents</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/development-environment/">Development Environment</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/testing/">Testing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/submitting-a-pull-request/">Submitting a Pull Request</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/community/">Community</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/triaging-issues/">Triaging Issues</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/conduct/">Conduct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/maintainers/">Maintainers</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Reference Guide</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/migration/">Migrating from Deis v1</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/creating-a-self-signed-ssl-certificate/">Creating a Self-Signed SSL Certificate</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/terms/">Terms</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/controller-api/v2.0/">Controller API v2.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/controller-api/v2.1/">Controller API v2.1</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/controller-api/v2.2/">Controller API v2.2</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/controller-api/v2.3/">Controller API v2.3</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Changelogs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.18.0/">v2.18.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.17.0/">v2.17.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.16.0/">v2.16.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.15.0/">v2.15.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.14.0/">v2.14.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.13.0/">v2.13.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.12.0/">v2.12.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.11.0/">v2.11.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.10.0/">v2.10.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.9.1/">v2.9.1</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.9.0/">v2.9.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.8.0/">v2.8.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.7.0/">v2.7.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.6.0/">v2.6.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.5.0/">v2.5.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.4.2/">v2.4.2</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.4.1/">v2.4.1</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.4.0/">v2.4.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.3.0/">v2.3.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.2.0/">v2.2.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.1.0/">v2.1.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.0.0/">v2.0.0</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Deis Workflow Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Applications &raquo;</li>
+        
+      
+    
+    <li>Managing App Processes</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="managing-application-processes">Managing Application Processes<a class="headerlink" href="#managing-application-processes" title="Permanent link">&para;</a></h1>
+<p>Deis Workflow manages your application as a set of processes that can be named, scaled and configured according to their
+role. This gives you the flexibility to easily manage the different facets of your application. For example, you may have
+web-facing processes that handle HTTP traffic, background worker processes that do async work, and a helper process that
+streams from the Twitter API.</p>
+<p>By using a Procfile, either checked in to your application or provided via the CLI you can specify the name of the type
+and the application command that should run. To spawn other process types, use <code>deis scale &lt;type&gt;=&lt;n&gt;</code> to scale those
+types accordingly.</p>
+<h2 id="default-process-types">Default Process Types<a class="headerlink" href="#default-process-types" title="Permanent link">&para;</a></h2>
+<p>In the absence of a Procfile, a single, default process type is assumed for each application.</p>
+<p>Applications built using <a href="../using-buildpacks/">Buildpacks</a> via <code>git push</code> implicitly receive a <code>web</code> process type, which starts
+the application server. Rails 4, for example, has the following process type:</p>
+<pre class="codehilite"><code>web: bundle exec rails server -p $PORT</code></pre>
+
+
+<p>All applications utilizing <a href="../using-dockerfiles/">Dockerfiles</a> have an implied <code>cmd</code> process type, which runs the
+Dockerfile's <code>CMD</code> directive unmodified:</p>
+<pre class="codehilite"><code>$ cat Dockerfile
+FROM centos:latest
+COPY . /app
+WORKDIR /app
+CMD python -m SimpleHTTPServer 5000
+EXPOSE 5000</code></pre>
+
+
+<p>For the above Dockerfile-based application, the <code>cmd</code> process type would run the Docker <code>CMD</code> of <code>python -m SimpleHTTPServer 5000</code>.</p>
+<p>Applications utilizing <a href="../using-docker-images/">remote Docker images</a>, a <code>cmd</code> process type is also implied, and runs the <code>CMD</code>
+specified in the Docker image.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>web</code> and <code>cmd</code> process types are special as they’re the only process types that will
+receive HTTP traffic from Workflow’s routers. Other process types can be named arbitrarily.</p>
+</div>
+<h2 id="declaring-process-types">Declaring Process Types<a class="headerlink" href="#declaring-process-types" title="Permanent link">&para;</a></h2>
+<p>If you use <a href="../using-buildpacks/">Buildpack</a> or <a href="../using-dockerfiles/">Dockerfile</a> builds and want to override or specify additional process
+types, simply include a file named <code>Procfile</code> in the root of your application's source tree.</p>
+<p>The format of a <code>Procfile</code> is one process type per line, with each line containing the command to invoke:</p>
+<pre class="codehilite"><code>&lt;process type&gt;: &lt;command&gt;</code></pre>
+
+
+<p>The syntax is defined as:</p>
+<ul>
+<li><code>&lt;process type&gt;</code> – a lowercase alphanumeric string, is a name for your command, such as web, worker, urgentworker, clock, etc.</li>
+<li><code>&lt;command&gt;</code> – a command line to launch the process, such as <code>rake jobs:work</code>.</li>
+</ul>
+<p>This example Procfile specifies two types, <code>web</code> and <code>sleeper</code>. The <code>web</code> process launches a web server on port 5000 and
+a simple process which sleeps for 900 seconds and exits.</p>
+<pre class="codehilite"><code>$ cat Procfile
+web: bundle exec ruby web.rb -p ${PORT:-5000}
+sleeper: sleep 900</code></pre>
+
+
+<p>If you are using <a href="../using-docker-images/">remote Docker images</a>, you may define process types by either running <code>deis pull</code> with a
+<code>Procfile</code> in your working directory, or by passing a stringified Procfile to the <code>--procfile</code> CLI option.</p>
+<p>For example, passing process types inline:</p>
+<pre class="codehilite"><code>$ deis pull deis/example-go:latest --procfile=&quot;cmd: /app/bin/boot&quot;</code></pre>
+
+
+<p>Read a <code>Procfile</code> in another directory:</p>
+<pre class="codehilite"><code>$ deis pull deis/example-go:latest --procfile=&quot;$(cat deploy/Procfile)&quot;</code></pre>
+
+
+<p>Or via a Procfile located in your current, working directory:</p>
+<pre class="codehilite"><code>$ cat Procfile
+cmd: /bin/boot
+sleeper: echo &quot;sleeping&quot;; sleep 900
+
+
+$ deis pull -a steely-mainsail deis/example-go
+Creating build... done
+
+$ deis scale sleeper=1 -a steely-mainsail
+Scaling processes... but first, coffee!
+done in 0s
+=== steely-mainsail Processes
+--- cmd:
+steely-mainsail-cmd-3291896318-nyrim up (v3)
+--- sleeper:
+steely-mainsail-sleeper-3291896318-oq1jr up (v3)</code></pre>
+
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only process types of <code>web</code> and <code>cmd</code> will be scaled to 1 automatically. If you have additional process types
+remember to scale the process counts after creation.</p>
+</div>
+<p>To remove a process type simply scale it to 0:</p>
+<pre class="codehilite"><code>$ deis scale sleeper=0 -a steely-mainsail
+Scaling processes... but first, coffee!
+done in 3s
+=== steely-mainsail Processes
+--- cmd:
+steely-mainsail-cmd-3291896318-nyrim up (v3)</code></pre>
+
+
+<h2 id="scaling-processes">Scaling Processes<a class="headerlink" href="#scaling-processes" title="Permanent link">&para;</a></h2>
+<p>Applications deployed on Deis Workflow scale out via the <a href="https://devcenter.heroku.com/articles/process-model">process model</a>. Use <code>deis scale</code> to control the number of
+<a href="../../reference-guide/terms/#container">containers</a> that power your app.</p>
+<pre class="codehilite"><code>$ deis scale cmd=5 -a iciest-waggoner
+Scaling processes... but first, coffee!
+done in 3s
+=== iciest-waggoner Processes
+--- cmd:
+iciest-waggoner-web-3291896318-09j0o up (v2)
+iciest-waggoner-web-3291896318-3r7kp up (v2)
+iciest-waggoner-web-3291896318-gc4xv up (v2)
+iciest-waggoner-web-3291896318-lviwo up (v2)
+iciest-waggoner-web-3291896318-kt7vu up (v2)</code></pre>
+
+
+<p>If you have multiple process types for your application you may scale the process count for each type separately. For
+example, this allows you to manage web process independently from background workers. For more information on process
+types see our documentation for <a href="./">Managing App Processes</a>.</p>
+<p>In this example, we are scaling the process type <code>web</code> to 5 but leaving the process type <code>background</code> with one worker.</p>
+<pre class="codehilite"><code>$ deis scale web=5
+Scaling processes... but first, coffee!
+done in 4s
+=== scenic-icehouse Processes
+--- web:
+scenic-icehouse-web-3291896318-7lord up (v2)
+scenic-icehouse-web-3291896318-jn957 up (v2)
+scenic-icehouse-web-3291896318-rsekj up (v2)
+scenic-icehouse-web-3291896318-vwhnh up (v2)
+scenic-icehouse-web-3291896318-vokg7 up (v2)
+--- background:
+scenic-icehouse-web-3291896318-background-yf8kh up (v2)</code></pre>
+
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default process type for Dockerfile and Docker Image applications is 'cmd' rather than 'web'.</p>
+</div>
+<p>Scaling a process down, by reducing the process count, sends a <code>TERM</code> signal to the processes, followed by a <code>SIGKILL</code>
+if they have not exited within 30 seconds. Depending on your application, scaling down may interrupt long-running HTTP
+client connections.</p>
+<p>For example, scaling from 5 processes to 3:</p>
+<pre class="codehilite"><code>$ deis scale web=3
+Scaling processes... but first, coffee!
+done in 1s
+=== scenic-icehouse Processes
+--- background:
+scenic-icehouse-web-3291896318-background-yf8kh up (v2)
+--- web:
+scenic-icehouse-web-3291896318-7lord up (v2)
+scenic-icehouse-web-3291896318-rsekj up (v2)
+scenic-icehouse-web-3291896318-vokg7 up (v2)</code></pre>
+
+
+<h2 id="autoscale">Autoscale<a class="headerlink" href="#autoscale" title="Permanent link">&para;</a></h2>
+<p>Autoscale allows adding a minimum and maximum number of pods on a per process type basis. This is accomplished by specifying a target CPU usage across all available pods.</p>
+<p>This feature is built on top of <a href="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/">Horizontal Pod Autoscaling</a> in Kubernetes or <a href="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/">HPA</a> for short.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is an alpha feature. It is recommended to be on the latest Kubernetes when using this feature.</p>
+</div>
+<pre class="codehilite"><code>$ deis autoscale:set web --min=3 --max=8 --cpu-percent=75
+Applying autoscale settings for process type web on scenic-icehouse... done</code></pre>
+
+
+<p>And then review the scaling rule that was created for <code>web</code></p>
+<pre class="codehilite"><code>$ deis autoscale:list
+=== scenic-icehouse Autoscale
+
+--- web:
+Min Replicas: 3
+Max Replicas: 8
+CPU: 75%</code></pre>
+
+
+<p>Remove scaling rule</p>
+<pre class="codehilite"><code>$ deis autoscale:unset web
+Removing autoscale for process type web on scenic-icehouse... done</code></pre>
+
+
+<p>For autoscaling to work CPU requests have to be specified on each application Pod (can be done via <code>deis limits --cpu</code>). This allows the autoscale policies to do the <a href="https://github.com/kubernetes/community/blob/master/contributors/design-proposals/horizontal-pod-autoscaler.md#autoscaling-algorithm">appropriate calculations</a> and make decisions on when to scale up and down.</p>
+<p>Scale up can only happen if there was no rescaling within the last 3 minutes. Scale down will wait for 5 minutes from the last rescaling. That information and more can be found at <a href="https://github.com/kubernetes/community/blob/master/contributors/design-proposals/horizontal-pod-autoscaler.md#autoscaling-algorithm">HPA algorithm page</a>.</p>
+<h2 id="web-vs-cmd-process-types">Web vs Cmd Process Types<a class="headerlink" href="#web-vs-cmd-process-types" title="Permanent link">&para;</a></h2>
+<p>When deploying to Deis Workflow using a Heroku Buildpack, Workflow boots the <code>web</code> process type to
+boot the application server. When you deploy an application that has a Dockerfile or uses <a href="../using-docker-images/">Docker
+images</a>, Workflow boots the <code>cmd</code> process type. Both act similarly in that
+they are exposed to the router as web applications. However, the <code>cmd</code> process type is special
+because, if left undefined, it is equivalent to running the <a href="../../reference-guide/terms/#container">container</a> without any additional
+arguments.  (i.e. The process specified by the Dockerfile or Docker image's <code>CMD</code> directive will
+be used.)</p>
+<p>If migrating an application from Heroku Buildpacks to a Docker-based deployment, Workflow will not
+automatically convert the <code>web</code> process type to <code>cmd</code>. To do this, you'll have to manually scale
+down the old process type and scale the new process type up.</p>
+<h2 id="restarting-an-application-processes">Restarting an Application Processes<a class="headerlink" href="#restarting-an-application-processes" title="Permanent link">&para;</a></h2>
+<p>If you need to restart an application process, you may use <code>deis ps:restart</code>. Behind the scenes, Deis Workflow instructs
+Kubernetes to terminate the old process and launch a new one in its place.</p>
+<pre class="codehilite"><code>$ deis ps
+=== scenic-icehouse Processes
+--- web:
+scenic-icehouse-web-3291896318-7lord up (v2)
+scenic-icehouse-web-3291896318-rsekj up (v2)
+scenic-icehouse-web-3291896318-vokg7 up (v2)
+--- background:
+scenic-icehouse-background-3291896318-yf8kh up (v2)
+$ deis ps:restart scenic-icehouse-background-3291896318-yf8kh
+Restarting processes... but first, coffee!
+done in 6s
+=== scenic-icehouse Processes
+--- background:
+scenic-icehouse-background-3291896318-yd87g up (v2)</code></pre>
+
+
+<p>Notice that the process name has changed from <code>scenic-icehouse-background-3291896318-yf8kh</code> to
+<code>scenic-icehouse-background-3291896318-yd87g</code>. In a multi-node Kubernetes cluster, this may also have the effect of scheduling
+the Pod to a new node.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../managing-app-configuration/" class="btn btn-neutral float-right" title="Managing App Configuration">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../using-docker-images/" class="btn btn-neutral" title="Docker Images"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../using-docker-images/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../managing-app-configuration/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../static/js/foundation.js" defer></script>
+      <script src="../../static/js/foundation.dropdown.js" defer></script>
+      <script src="../../static/js/foundation.offcanvas.js" defer></script>
+      <script src="../../static/js/headroom.min.js" defer></script>
+      <script src="../../static/js/adjustments.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

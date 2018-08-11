@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>SSL Certificates - Deis Workflow Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "SSL Certificates";
+    var mkdocs_page_input_path = "applications/ssl-certificates.md";
+    var mkdocs_page_url = "/workflow/applications/ssl-certificates/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-42867143-3', 'auto');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Deis Workflow Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Home</span>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Quick Start</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../quickstart/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../quickstart/install-cli-tools/">Install CLI Tools</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">AWS</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/aws/boot/">Boot</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/aws/dns/">DNS</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/aws/install-aws/">Install Workflow</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Azure</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/azure-acs/boot/">Boot</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/azure-acs/dns/">DNS</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/azure-acs/install-azure-acs/">Install Workflow</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">GKE</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/gke/boot/">Boot</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/gke/dns/">DNS</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/gke/install-gke/">Install Workflow</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Minikube</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/minikube/boot/">Boot</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/minikube/dns/">DNS</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../quickstart/provider/minikube/install-minikube/">Install Workflow</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../quickstart/deploy-an-app/">Deploy Your First App</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Understanding Workflow</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../understanding-workflow/concepts/">Concepts</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../understanding-workflow/architecture/">Architecture</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../understanding-workflow/components/">Components</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Installing Workflow</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/system-requirements/">System Requirements</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/">Installing Workflow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/configuring-object-storage/">Configuring Object Storage</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/configuring-postgres/">Configuring Postgres</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/configuring-registry/">Configuring the Registry</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/chart-provenance/">Chart Provenance</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../installing-workflow/experimental-native-ingress/">Experimental Native Ingress</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Users</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../users/cli/">Command Line Interface</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../users/registration/">Users and Registration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../users/ssh-keys/">SSH Keys</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Applications</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../deploying-apps/">Deploying Apps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../using-buildpacks/">Buildpacks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../using-dockerfiles/">Dockerfiles</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../using-docker-images/">Docker Images</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing-app-processes/">Managing App Processes</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing-app-configuration/">Managing App Configuration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing-app-lifecycle/">Managing App Lifecycle</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../inter-app-communication/">Inter-app Communication</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing-resource-limits/">Resource Limits</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../domains-and-routing/">Domains and Routing</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">SSL Certificates</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#application-ssl-certificates">Application SSL Certificates</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#overview">Overview</a></li>
+        
+            <li><a class="toctree-l4" href="#acquire-ssl-certificate">Acquire SSL Certificate</a></li>
+        
+            <li><a class="toctree-l4" href="#dns-and-domain-configuration">DNS and Domain Configuration</a></li>
+        
+            <li><a class="toctree-l4" href="#add-a-certificate">Add a Certificate</a></li>
+        
+            <li><a class="toctree-l4" href="#attach-ssl-certificate-to-a-domain">Attach SSL certificate to a domain</a></li>
+        
+            <li><a class="toctree-l4" href="#endpoint-overview">Endpoint overview</a></li>
+        
+            <li><a class="toctree-l4" href="#testing-ssl">Testing SSL</a></li>
+        
+            <li><a class="toctree-l4" href="#enforcing-ssl-at-the-router">Enforcing SSL at the Router</a></li>
+        
+            <li><a class="toctree-l4" href="#remove-certificate">Remove Certificate</a></li>
+        
+            <li><a class="toctree-l4" href="#swapping-out-certificates">Swapping out certificates</a></li>
+        
+            <li><a class="toctree-l4" href="#troubleshooting">Troubleshooting</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Managing Workflow</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/tuning-component-settings/">Tuning Component Settings</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/configuring-load-balancers/">Configuring Load Balancers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/configuring-dns/">Configuring DNS</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/deploy-hooks/">Deploy Hooks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/platform-logging/">Platform Logging</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/platform-monitoring/">Platform Monitoring</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/production-deployments/">Production Deployments</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/security-considerations/">Security Considerations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/platform-ssl/">Platform SSL</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/upgrading-workflow/">Upgrading Workflow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing-workflow/extending-workflow/">Extending Workflow</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Troubleshooting</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../troubleshooting/">Troubleshooting Workflow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../troubleshooting/kubectl/">Troubleshooting using Kubectl</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../troubleshooting/applications/">Troubleshooting Applications</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Roadmap</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../roadmap/planning-process/">Planning Process</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../roadmap/roadmap/">Roadmap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../roadmap/releases/">Releases</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Contributing</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../contributing/overview/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/design-documents/">Design Documents</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/development-environment/">Development Environment</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/testing/">Testing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/submitting-a-pull-request/">Submitting a Pull Request</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/community/">Community</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/triaging-issues/">Triaging Issues</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/conduct/">Conduct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../contributing/maintainers/">Maintainers</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Reference Guide</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/migration/">Migrating from Deis v1</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/creating-a-self-signed-ssl-certificate/">Creating a Self-Signed SSL Certificate</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/terms/">Terms</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/controller-api/v2.0/">Controller API v2.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/controller-api/v2.1/">Controller API v2.1</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/controller-api/v2.2/">Controller API v2.2</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference-guide/controller-api/v2.3/">Controller API v2.3</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Changelogs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.18.0/">v2.18.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.17.0/">v2.17.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.16.0/">v2.16.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.15.0/">v2.15.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.14.0/">v2.14.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.13.0/">v2.13.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.12.0/">v2.12.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.11.0/">v2.11.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.10.0/">v2.10.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.9.1/">v2.9.1</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.9.0/">v2.9.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.8.0/">v2.8.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.7.0/">v2.7.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.6.0/">v2.6.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.5.0/">v2.5.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.4.2/">v2.4.2</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.4.1/">v2.4.1</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.4.0/">v2.4.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.3.0/">v2.3.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.2.0/">v2.2.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.1.0/">v2.1.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../changelogs/v2.0.0/">v2.0.0</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Deis Workflow Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Applications &raquo;</li>
+        
+      
+    
+    <li>SSL Certificates</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="application-ssl-certificates">Application SSL Certificates<a class="headerlink" href="#application-ssl-certificates" title="Permanent link">&para;</a></h1>
+<p>SSL is a cryptographic protocol that provides end-to-end encryption and integrity for all web
+requests. Apps that transmit sensitive data should enable SSL to ensure all information is
+transmitted securely.</p>
+<p>To enable SSL on a custom domain, e.g., <code>www.example.com</code>, use the SSL endpoint.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>deis certs</code> is only useful for custom domains. Default application domains are
+SSL-enabled already and can be accessed simply by using https,
+e.g. <code>https://foo.deisapp.com</code> (provided that you have <a href="../../managing-workflow/platform-ssl/">installed your wildcard
+certificate</a> on the routers or on the load balancer).</p>
+</div>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Because of the unique nature of SSL validation, provisioning SSL for your domain is a multi-step
+process that involves several third-parties. You will need to:</p>
+<ol>
+<li>Purchase an SSL certificate from your SSL provider</li>
+<li>Upload the cert to Deis</li>
+</ol>
+<h2 id="acquire-ssl-certificate">Acquire SSL Certificate<a class="headerlink" href="#acquire-ssl-certificate" title="Permanent link">&para;</a></h2>
+<p>Purchasing an SSL cert varies in cost and process depending on the vendor. <a href="https://www.rapidssl.com/">RapidSSL</a> offers a
+simple way to purchase a certificate and is a recommended solution. If you’re able to use this
+provider, see <a href="https://www.rapidssl.com/buy-ssl/">buy an SSL certificate with RapidSSL</a> for instructions.</p>
+<h2 id="dns-and-domain-configuration">DNS and Domain Configuration<a class="headerlink" href="#dns-and-domain-configuration" title="Permanent link">&para;</a></h2>
+<p>Once the SSL certificate is provisioned and your cert is confirmed, you must route requests for
+your domain through Deis. Unless you've already done so, add the domain specified when generating
+the CSR to your app with:</p>
+<pre class="codehilite"><code>$ deis domains:add www.example.com -a foo
+Adding www.example.com to foo... done</code></pre>
+
+
+<h2 id="add-a-certificate">Add a Certificate<a class="headerlink" href="#add-a-certificate" title="Permanent link">&para;</a></h2>
+<p>Add your certificate, any intermediate certificates, and private key to the endpoint with the
+<code>certs:add</code> command.</p>
+<pre class="codehilite"><code>$ deis certs:add example-com server.crt server.key
+Adding SSL endpoint... done
+www.example.com</code></pre>
+
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The name given to the certificate can only contain a-z (lowercase), 0-9 and hyphens</p>
+</div>
+<p>The Deis platform will investigate the certificate and extract any relevant information from it
+such as the Common Name, Subject Alt Names (SAN), fingerprint and more.</p>
+<p>This allows for wildcard certificates and multiple domains in the SAN without uploading duplicates.</p>
+<h3 id="add-a-certificate-chain">Add a Certificate Chain<a class="headerlink" href="#add-a-certificate-chain" title="Permanent link">&para;</a></h3>
+<p>Sometimes, your certificates (such as a self-signed or a cheap certificate) need additional
+certificates to establish the chain of trust. What you need to do is bundle all the certificates
+into one file and give that to Deis. Importantly, your site’s certificate must be the first one:</p>
+<pre class="codehilite"><code>$ cat server.crt server.ca &gt; server.bundle</code></pre>
+
+
+<p>After that, you can add them to Deis with the <code>certs:add</code> command:</p>
+<pre class="codehilite"><code>$ deis certs:add example-com server.bundle server.key
+Adding SSL endpoint... done
+www.example.com</code></pre>
+
+
+<h2 id="attach-ssl-certificate-to-a-domain">Attach SSL certificate to a domain<a class="headerlink" href="#attach-ssl-certificate-to-a-domain" title="Permanent link">&para;</a></h2>
+<p>Certificates are not automagically connected up to domains, instead you will have to attach a
+certificate to a domain</p>
+<pre class="codehilite"><code>$ deis certs:attach example-com example.com</code></pre>
+
+
+<p>Each certificate can be connected to many domains. There is no need to upload duplicates.</p>
+<p>To remove an association</p>
+<pre class="codehilite"><code>$ deis certs:detach example-com example.com</code></pre>
+
+
+<h2 id="endpoint-overview">Endpoint overview<a class="headerlink" href="#endpoint-overview" title="Permanent link">&para;</a></h2>
+<p>You can verify the details of your domain's SSL configuration with <code>deis certs</code>.</p>
+<pre class="codehilite"><code>$ deis certs
+
+     Name     |    Common Name    | SubjectAltName    |         Expires         |   Fingerprint   |   Domains    |   Updated   |   Created
++-------------+-------------------+-------------------+-------------------------+-----------------+--------------+-------------+-------------+
+  example-com |     example.com   | blog.example.com  | 31 Dec 2017 (in 1 year) | 8F:8E[...]CD:EB |  example.com | 30 Jan 2016 | 29 Jan 2016</code></pre>
+
+
+<p>or by looking at at each certificates detailed information</p>
+<pre class="codehilite"><code>$ deis certs:info example-com
+
+=== bar-com Certificate
+Common Name(s):     example.com
+Expires At:         2017-01-14 23:57:57 +0000 UTC
+Starts At:          2016-01-15 23:57:57 +0000 UTC
+Fingerprint:        7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0
+Subject Alt Name:   blog.example.com
+Issuer:             /C=US/ST=CA/L=San Francisco/O=Deis/OU=Engineering/CN=example.com/emailAddress=engineering@deis.com
+Subject:            /C=US/ST=CA/L=San Francisco/O=Deis/OU=Engineering/CN=example.com/emailAddress=engineering@deis.com
+
+Connected Domains:  example.com
+Owner:              admin-user
+Created:            2016-01-28 19:07:41 +0000 UTC
+Updated:            2016-01-30 00:10:02 +0000 UTC</code></pre>
+
+
+<h2 id="testing-ssl">Testing SSL<a class="headerlink" href="#testing-ssl" title="Permanent link">&para;</a></h2>
+<p>Use a command line utility like <code>curl</code> to test that everything is configured correctly for your
+secure domain.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The -k option flag tells curl to ignore untrusted certificates.</p>
+</div>
+<p>Pay attention to the output. It should print <code>SSL certificate verify ok</code>. If it prints something
+like <code>common name: www.example.com (does not match 'www.somedomain.com')</code> then something is not
+configured correctly.</p>
+<h2 id="enforcing-ssl-at-the-router">Enforcing SSL at the Router<a class="headerlink" href="#enforcing-ssl-at-the-router" title="Permanent link">&para;</a></h2>
+<p>To enforce all HTTP requests be redirected to HTTPS, TLS can be enforced at the router level by
+running</p>
+<pre class="codehilite"><code>$ deis tls:enable -a foo
+Enabling https-only requests for foo... done</code></pre>
+
+
+<p>Users hitting the HTTP endpoint for the application will now receive a 301 redirect to the HTTPS
+endpoint.</p>
+<p>To disable enforced TLS, run</p>
+<pre class="codehilite"><code>$ deis tls:disable -a foo
+Disabling https-only requests for foo... done</code></pre>
+
+
+<h2 id="remove-certificate">Remove Certificate<a class="headerlink" href="#remove-certificate" title="Permanent link">&para;</a></h2>
+<p>You can remove a certificate using the <code>certs:remove</code> command:</p>
+<pre class="codehilite"><code>$ deis certs:remove my-cert
+Removing www.example.com... Done.</code></pre>
+
+
+<h2 id="swapping-out-certificates">Swapping out certificates<a class="headerlink" href="#swapping-out-certificates" title="Permanent link">&para;</a></h2>
+<p>Over the lifetime of an application an operator will have to acquire certificates with new expire
+dates and apply it to all relevant applications, below is the recommended way to swap out certificates.</p>
+<p>Be intentional with certificate names, name them <code>example-com-2017</code> when possible, where the year
+signifies the expiry year. This allows for <code>example-com-2018</code> when a new certificate is purchased.</p>
+<p>Assuming all applications are already using <code>example-com-2017</code> the following commands can be ran,
+chained together or otherwise:</p>
+<pre class="codehilite"><code>$ deis certs:detach example-com-2017 example.com
+$ deis certs:attach example-com-2018 example.com</code></pre>
+
+
+<p>This will take care of a singular domain which allows the operator to verify everything went
+as planned and slowly roll it out to any other application using the same method.</p>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<p>Here are some steps you can follow if your SSL endpoint is not working as you'd expect.</p>
+<h3 id="untrusted-certificate">Untrusted Certificate<a class="headerlink" href="#untrusted-certificate" title="Permanent link">&para;</a></h3>
+<p>In some cases when accessing the SSL endpoint, it may list your certificate as untrusted.</p>
+<p>If this occurs, it may be because it is not trusted by Mozilla’s list of <a href="https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/included/">root CAs</a>. If this is
+the case, your certificate may be considered untrusted for many browsers.</p>
+<p>If you have uploaded a certificate that was signed by a root authority but you get the message that
+it is not trusted, then something is wrong with the certificate. For example, it may be missing
+<a href="http://en.wikipedia.org/wiki/Intermediate_certificate_authorities">intermediary certificates</a>. If so, download the intermediary certificates from your SSL provider,
+remove the certificate from Deis and re-run the <code>certs:add</code> command.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../managing-workflow/tuning-component-settings/" class="btn btn-neutral float-right" title="Tuning Component Settings">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../domains-and-routing/" class="btn btn-neutral" title="Domains and Routing"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../domains-and-routing/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../managing-workflow/tuning-component-settings/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../static/js/foundation.js" defer></script>
+      <script src="../../static/js/foundation.dropdown.js" defer></script>
+      <script src="../../static/js/foundation.offcanvas.js" defer></script>
+      <script src="../../static/js/headroom.min.js" defer></script>
+      <script src="../../static/js/adjustments.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,1845 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Controller API v2.2 - Deis Workflow Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Controller API v2.2";
+    var mkdocs_page_input_path = "reference-guide/controller-api/v2.2.md";
+    var mkdocs_page_url = "/workflow/reference-guide/controller-api/v2.2/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-42867143-3', 'auto');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Deis Workflow Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Home</span>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Quick Start</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../quickstart/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../quickstart/install-cli-tools/">Install CLI Tools</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">AWS</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../quickstart/provider/aws/boot/">Boot</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../quickstart/provider/aws/dns/">DNS</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../quickstart/provider/aws/install-aws/">Install Workflow</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Azure</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../quickstart/provider/azure-acs/boot/">Boot</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../quickstart/provider/azure-acs/dns/">DNS</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../quickstart/provider/azure-acs/install-azure-acs/">Install Workflow</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">GKE</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../quickstart/provider/gke/boot/">Boot</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../quickstart/provider/gke/dns/">DNS</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../quickstart/provider/gke/install-gke/">Install Workflow</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Minikube</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../quickstart/provider/minikube/boot/">Boot</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../quickstart/provider/minikube/dns/">DNS</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../quickstart/provider/minikube/install-minikube/">Install Workflow</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../quickstart/deploy-an-app/">Deploy Your First App</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Understanding Workflow</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../understanding-workflow/concepts/">Concepts</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../understanding-workflow/architecture/">Architecture</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../understanding-workflow/components/">Components</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Installing Workflow</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../installing-workflow/system-requirements/">System Requirements</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../installing-workflow/">Installing Workflow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../installing-workflow/configuring-object-storage/">Configuring Object Storage</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../installing-workflow/configuring-postgres/">Configuring Postgres</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../installing-workflow/configuring-registry/">Configuring the Registry</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../installing-workflow/chart-provenance/">Chart Provenance</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../installing-workflow/experimental-native-ingress/">Experimental Native Ingress</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Users</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../users/cli/">Command Line Interface</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../users/registration/">Users and Registration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../users/ssh-keys/">SSH Keys</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Applications</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../applications/deploying-apps/">Deploying Apps</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../applications/using-buildpacks/">Buildpacks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../applications/using-dockerfiles/">Dockerfiles</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../applications/using-docker-images/">Docker Images</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../applications/managing-app-processes/">Managing App Processes</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../applications/managing-app-configuration/">Managing App Configuration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../applications/managing-app-lifecycle/">Managing App Lifecycle</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../applications/inter-app-communication/">Inter-app Communication</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../applications/managing-resource-limits/">Resource Limits</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../applications/domains-and-routing/">Domains and Routing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../applications/ssl-certificates/">SSL Certificates</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Managing Workflow</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../managing-workflow/tuning-component-settings/">Tuning Component Settings</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../managing-workflow/configuring-load-balancers/">Configuring Load Balancers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../managing-workflow/configuring-dns/">Configuring DNS</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../managing-workflow/deploy-hooks/">Deploy Hooks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../managing-workflow/platform-logging/">Platform Logging</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../managing-workflow/platform-monitoring/">Platform Monitoring</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../managing-workflow/production-deployments/">Production Deployments</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../managing-workflow/security-considerations/">Security Considerations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../managing-workflow/platform-ssl/">Platform SSL</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../managing-workflow/upgrading-workflow/">Upgrading Workflow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../managing-workflow/extending-workflow/">Extending Workflow</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Troubleshooting</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../troubleshooting/">Troubleshooting Workflow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../troubleshooting/kubectl/">Troubleshooting using Kubectl</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../troubleshooting/applications/">Troubleshooting Applications</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Roadmap</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../roadmap/planning-process/">Planning Process</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../roadmap/roadmap/">Roadmap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../roadmap/releases/">Releases</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Contributing</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../contributing/overview/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../contributing/design-documents/">Design Documents</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../contributing/development-environment/">Development Environment</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../contributing/testing/">Testing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../contributing/submitting-a-pull-request/">Submitting a Pull Request</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../contributing/community/">Community</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../contributing/triaging-issues/">Triaging Issues</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../contributing/conduct/">Conduct</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../contributing/maintainers/">Maintainers</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Reference Guide</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../migration/">Migrating from Deis v1</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../creating-a-self-signed-ssl-certificate/">Creating a Self-Signed SSL Certificate</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../terms/">Terms</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../v2.0/">Controller API v2.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../v2.1/">Controller API v2.1</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Controller API v2.2</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#controller-api-v22">Controller API v2.2</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#whats-new">What's New</a></li>
+        
+            <li><a class="toctree-l4" href="#authentication">Authentication</a></li>
+        
+            <li><a class="toctree-l4" href="#applications">Applications</a></li>
+        
+            <li><a class="toctree-l4" href="#certificates">Certificates</a></li>
+        
+            <li><a class="toctree-l4" href="#pods">Pods</a></li>
+        
+            <li><a class="toctree-l4" href="#configuration">Configuration</a></li>
+        
+            <li><a class="toctree-l4" href="#domains">Domains</a></li>
+        
+            <li><a class="toctree-l4" href="#builds">Builds</a></li>
+        
+            <li><a class="toctree-l4" href="#releases">Releases</a></li>
+        
+            <li><a class="toctree-l4" href="#keys">Keys</a></li>
+        
+            <li><a class="toctree-l4" href="#permissions">Permissions</a></li>
+        
+            <li><a class="toctree-l4" href="#users">Users</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../v2.3/">Controller API v2.3</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Changelogs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../changelogs/v2.18.0/">v2.18.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../changelogs/v2.17.0/">v2.17.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../changelogs/v2.16.0/">v2.16.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../changelogs/v2.15.0/">v2.15.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../changelogs/v2.14.0/">v2.14.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../changelogs/v2.13.0/">v2.13.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../changelogs/v2.12.0/">v2.12.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../changelogs/v2.11.0/">v2.11.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../changelogs/v2.10.0/">v2.10.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../changelogs/v2.9.1/">v2.9.1</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../changelogs/v2.9.0/">v2.9.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../changelogs/v2.8.0/">v2.8.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../changelogs/v2.7.0/">v2.7.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../changelogs/v2.6.0/">v2.6.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../changelogs/v2.5.0/">v2.5.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../changelogs/v2.4.2/">v2.4.2</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../changelogs/v2.4.1/">v2.4.1</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../changelogs/v2.4.0/">v2.4.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../changelogs/v2.3.0/">v2.3.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../changelogs/v2.2.0/">v2.2.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../changelogs/v2.1.0/">v2.1.0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../changelogs/v2.0.0/">v2.0.0</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Deis Workflow Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Reference Guide &raquo;</li>
+        
+      
+    
+    <li>Controller API v2.2</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="controller-api-v22">Controller API v2.2<a class="headerlink" href="#controller-api-v22" title="Permanent link">&para;</a></h1>
+<p>This is the v2.2 REST API for the Controller.</p>
+<h2 id="whats-new">What's New<a class="headerlink" href="#whats-new" title="Permanent link">&para;</a></h2>
+<p><strong>New!</strong> <code>/v2/auth/whoami</code> endpoint</p>
+<h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h2>
+<h3 id="register-a-new-user">Register a New User<a class="headerlink" href="#register-a-new-user" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/auth/register/ HTTP/1.1
+Host: deis.example.com
+Content-Type: application/json
+
+{
+    &quot;username&quot;: &quot;test&quot;,
+    &quot;password&quot;: &quot;opensesame&quot;,
+    &quot;email&quot;: &quot;test@example.com&quot;
+}</code></pre>
+
+
+<p>Optional Parameters:</p>
+<pre class="codehilite"><code>{
+    &quot;first_name&quot;: &quot;test&quot;,
+    &quot;last_name&quot;: &quot;testerson&quot;
+}</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 201 CREATED
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &quot;id&quot;: 1,
+    &quot;last_login&quot;: &quot;2014-10-19T22:01:00.601Z&quot;,
+    &quot;is_superuser&quot;: true,
+    &quot;username&quot;: &quot;test&quot;,
+    &quot;first_name&quot;: &quot;test&quot;,
+    &quot;last_name&quot;: &quot;testerson&quot;,
+    &quot;email&quot;: &quot;test@example.com&quot;,
+    &quot;is_staff&quot;: true,
+    &quot;is_active&quot;: true,
+    &quot;date_joined&quot;: &quot;2014-10-19T22:01:00.601Z&quot;,
+    &quot;groups&quot;: [],
+    &quot;user_permissions&quot;: []
+}</code></pre>
+
+
+<h3 id="log-in">Log in<a class="headerlink" href="#log-in" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/auth/login/ HTTP/1.1
+Host: deis.example.com
+Content-Type: application/json
+
+{&quot;username&quot;: &quot;test&quot;, &quot;password&quot;: &quot;opensesame&quot;}</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{&quot;token&quot;: &quot;abc123&quot;}</code></pre>
+
+
+<h3 id="cancel-account">Cancel Account<a class="headerlink" href="#cancel-account" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>DELETE /v2/auth/cancel/ HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 204 NO CONTENT
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0</code></pre>
+
+
+<h3 id="who-am-i">Who Am I<a class="headerlink" href="#who-am-i" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/auth/whoami/ HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &quot;id&quot;: 1,
+    &quot;last_login&quot;: &quot;2014-10-19T22:01:00.601Z&quot;,
+    &quot;is_superuser&quot;: true,
+    &quot;username&quot;: &quot;test&quot;,
+    &quot;first_name&quot;: &quot;test&quot;,
+    &quot;last_name&quot;: &quot;testerson&quot;,
+    &quot;email&quot;: &quot;test@example.com&quot;,
+    &quot;is_staff&quot;: true,
+    &quot;is_active&quot;: true,
+    &quot;date_joined&quot;: &quot;2014-10-19T22:01:00.601Z&quot;,
+    &quot;groups&quot;: [],
+    &quot;user_permissions&quot;: []
+}</code></pre>
+
+
+<h3 id="regenerate-token">Regenerate Token<a class="headerlink" href="#regenerate-token" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This command could require administrative privileges</p>
+</blockquote>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/auth/tokens/ HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Optional Parameters:</p>
+<pre class="codehilite"><code>{
+    &quot;username&quot; : &quot;test&quot;
+    &quot;all&quot; : &quot;true&quot;
+}</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{&quot;token&quot;: &quot;abc123&quot;}</code></pre>
+
+
+<h3 id="change-password">Change Password<a class="headerlink" href="#change-password" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/auth/passwd/ HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123
+
+{
+    &quot;password&quot;: &quot;foo&quot;,
+    &quot;new_password&quot;: &quot;bar&quot;
+}</code></pre>
+
+
+<p>Optional parameters:</p>
+<pre class="codehilite"><code>{&quot;username&quot;: &quot;testuser&quot;}</code></pre>
+
+
+<blockquote>
+<p><strong>note</strong></p>
+<p>Using the <code>username</code> parameter requires administrative privileges and makes the <code>password</code> parameter optional.</p>
+</blockquote>
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0</code></pre>
+
+
+<h2 id="applications">Applications<a class="headerlink" href="#applications" title="Permanent link">&para;</a></h2>
+<h3 id="list-all-applications">List all Applications<a class="headerlink" href="#list-all-applications" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/apps HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &quot;count&quot;: 1,
+    &quot;next&quot;: null,
+    &quot;previous&quot;: null,
+    &quot;results&quot;: [
+        {
+            &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+            &quot;id&quot;: &quot;example-go&quot;,
+            &quot;owner&quot;: &quot;test&quot;,
+            &quot;structure&quot;: {},
+            &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+            &quot;url&quot;: &quot;example-go.example.com&quot;,
+            &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;
+        }
+    ]
+}</code></pre>
+
+
+<h3 id="create-an-application">Create an Application<a class="headerlink" href="#create-an-application" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/apps/ HTTP/1.1
+Host: deis.example.com
+Content-Type: application/json
+Authorization: token abc123</code></pre>
+
+
+<p>Optional parameters:</p>
+<pre class="codehilite"><code>{&quot;id&quot;: &quot;example-go&quot;}</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 201 CREATED
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;id&quot;: &quot;example-go&quot;,
+    &quot;owner&quot;: &quot;test&quot;,
+    &quot;structure&quot;: {},
+    &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;url&quot;: &quot;example-go.example.com&quot;,
+    &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;
+}</code></pre>
+
+
+<h3 id="destroy-an-application">Destroy an Application<a class="headerlink" href="#destroy-an-application" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>DELETE /v2/apps/example-go/ HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 204 NO CONTENT
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0</code></pre>
+
+
+<h3 id="list-application-details">List Application Details<a class="headerlink" href="#list-application-details" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/apps/example-go/ HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;id&quot;: &quot;example-go&quot;,
+    &quot;owner&quot;: &quot;test&quot;,
+    &quot;structure&quot;: {},
+    &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;url&quot;: &quot;example-go.example.com&quot;,
+    &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;
+}</code></pre>
+
+
+<h3 id="update-application-details">Update Application Details<a class="headerlink" href="#update-application-details" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/apps/example-go/ HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Optional parameters:</p>
+<pre class="codehilite"><code>{
+  &quot;owner&quot;: &quot;test&quot;
+}</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 1.8.0
+Content-Type: application/json</code></pre>
+
+
+<h3 id="retrieve-application-logs">Retrieve Application Logs<a class="headerlink" href="#retrieve-application-logs" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/apps/example-go/logs/ HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Optional URL Query Parameters:</p>
+<pre class="codehilite"><code>?log_lines=</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: text/plain
+
+&quot;16:51:14 deis[api]: test created initial release\n&quot;</code></pre>
+
+
+<h3 id="run-one-off-commands">Run one-off Commands<a class="headerlink" href="#run-one-off-commands" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code>POST /v2/apps/example-go/run/ HTTP/1.1
+Host: deis.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&quot;command&quot;: &quot;echo hi&quot;}</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{&quot;exit_code&quot;: 0, &quot;output&quot;: &quot;hi\n&quot;}</code></pre>
+
+
+<h2 id="certificates">Certificates<a class="headerlink" href="#certificates" title="Permanent link">&para;</a></h2>
+<h3 id="list-all-certificates">List all Certificates<a class="headerlink" href="#list-all-certificates" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/certs HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+  &quot;count&quot;: 1,
+  &quot;next&quot;: null,
+  &quot;previous&quot;: null,
+  &quot;results&quot;: [
+    {
+      &quot;id&quot;: 22,
+      &quot;owner&quot;: &quot;test&quot;,
+      &quot;san&quot;: [],
+      &quot;domains&quot;: [],
+      &quot;created&quot;: &quot;2016-06-22T22:24:20Z&quot;,
+      &quot;updated&quot;: &quot;2016-06-22T22:24:20Z&quot;,
+      &quot;name&quot;: &quot;foo&quot;,
+      &quot;common_name&quot;: &quot;bar.com&quot;,
+      &quot;fingerprint&quot;: &quot;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&quot;,
+      &quot;expires&quot;: &quot;2017-01-14T23:57:57Z&quot;,
+      &quot;starts&quot;: &quot;2016-01-15T23:57:57Z&quot;,
+      &quot;issuer&quot;: &quot;/C=US/ST=CA/L=San Francisco/O=Deis/OU=Engineering/CN=bar.com/emailAddress=engineering@deis.com&quot;,
+      &quot;subject&quot;: &quot;/C=US/ST=CA/L=San Francisco/O=Deis/OU=Engineering/CN=bar.com/emailAddress=engineering@deis.com&quot;
+    }
+  ]
+}</code></pre>
+
+
+<h3 id="get-certificate-details">Get Certificate Details<a class="headerlink" href="#get-certificate-details" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/certs/foo HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+  &quot;id&quot;: 22,
+  &quot;owner&quot;: &quot;test&quot;,
+  &quot;san&quot;: [],
+  &quot;domains&quot;: [],
+  &quot;created&quot;: &quot;2016-06-22T22:24:20Z&quot;,
+  &quot;updated&quot;: &quot;2016-06-22T22:24:20Z&quot;,
+  &quot;name&quot;: &quot;foo&quot;,
+  &quot;common_name&quot;: &quot;bar.com&quot;,
+  &quot;fingerprint&quot;: &quot;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&quot;,
+  &quot;expires&quot;: &quot;2017-01-14T23:57:57Z&quot;,
+  &quot;starts&quot;: &quot;2016-01-15T23:57:57Z&quot;,
+  &quot;issuer&quot;: &quot;/C=US/ST=CA/L=San Francisco/O=Deis/OU=Engineering/CN=bar.com/emailAddress=engineering@deis.com&quot;,
+  &quot;subject&quot;: &quot;/C=US/ST=CA/L=San Francisco/O=Deis/OU=Engineering/CN=bar.com/emailAddress=engineering@deis.com&quot;
+}</code></pre>
+
+
+<h3 id="create-certificate">Create Certificate<a class="headerlink" href="#create-certificate" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/certs/ HTTP/1.1
+Host: deis.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{
+    &quot;name&quot;: &quot;foo&quot;
+    &quot;certificate&quot;: &quot;-----BEGIN CERTIFICATE-----&quot;,
+    &quot;key&quot;: &quot;-----BEGIN RSA PRIVATE KEY-----&quot;
+}</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 201 CREATED
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+  &quot;id&quot;: 22,
+  &quot;owner&quot;: &quot;test&quot;,
+  &quot;san&quot;: [],
+  &quot;domains&quot;: [],
+  &quot;created&quot;: &quot;2016-06-22T22:24:20Z&quot;,
+  &quot;updated&quot;: &quot;2016-06-22T22:24:20Z&quot;,
+  &quot;name&quot;: &quot;foo&quot;,
+  &quot;common_name&quot;: &quot;bar.com&quot;,
+  &quot;fingerprint&quot;: &quot;7A:CA:B8:50:FF:8D:EB:03:3D:AC:AD:13:4F:EE:03:D5:5D:EB:5E:37:51:8C:E0:98:F8:1B:36:2B:20:83:0D:C0&quot;,
+  &quot;expires&quot;: &quot;2017-01-14T23:57:57Z&quot;,
+  &quot;starts&quot;: &quot;2016-01-15T23:57:57Z&quot;,
+  &quot;issuer&quot;: &quot;/C=US/ST=CA/L=San Francisco/O=Deis/OU=Engineering/CN=bar.com/emailAddress=engineering@deis.com&quot;,
+  &quot;subject&quot;: &quot;/C=US/ST=CA/L=San Francisco/O=Deis/OU=Engineering/CN=bar.com/emailAddress=engineering@deis.com&quot;
+}</code></pre>
+
+
+<h3 id="destroy-a-certificate">Destroy a Certificate<a class="headerlink" href="#destroy-a-certificate" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>DELETE /v2/certs/foo HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 204 NO CONTENT
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0</code></pre>
+
+
+<h3 id="attach-a-domain-to-a-certificate">Attach a Domain to a Certificate<a class="headerlink" href="#attach-a-domain-to-a-certificate" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/certs/foo/domain/ HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123
+
+{
+    &quot;domain&quot;: &quot;test.com&quot;
+}</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 201 CREATED
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0</code></pre>
+
+
+<h3 id="remove-a-domain-from-a-certificate">Remove a Domain from a Certificate<a class="headerlink" href="#remove-a-domain-from-a-certificate" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>DELETE /v2/certs/foo/domain/test.com/ HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 204 NO CONTENT
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0</code></pre>
+
+
+<h2 id="pods">Pods<a class="headerlink" href="#pods" title="Permanent link">&para;</a></h2>
+<h3 id="list-all-pods">List all Pods<a class="headerlink" href="#list-all-pods" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/apps/example-go/pods/ HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &quot;count&quot;: 1,
+    &quot;results&quot;: [
+        {
+            &quot;name&quot;: &quot;go-v2-web-e7dej&quot;,
+            &quot;release&quot;: &quot;v2&quot;,
+            &quot;started&quot;: &quot;2014-01-01T00:00:00Z&quot;,
+            &quot;state&quot;: &quot;up&quot;,
+            &quot;type&quot;: &quot;web&quot;
+        }
+    ]
+}</code></pre>
+
+
+<h3 id="list-all-pods-by-type">List all Pods by Type<a class="headerlink" href="#list-all-pods-by-type" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/apps/example-go/pods/web/ HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &quot;count&quot;: 1,
+    &quot;results&quot;: [
+        {
+            &quot;name&quot;: &quot;go-v2-web-e7dej&quot;,
+            &quot;release&quot;: &quot;v2&quot;,
+            &quot;started&quot;: &quot;2014-01-01T00:00:00Z&quot;,
+            &quot;state&quot;: &quot;up&quot;,
+            &quot;type&quot;: &quot;web&quot;
+        }
+    ]
+}</code></pre>
+
+
+<h3 id="restart-all-pods">Restart All Pods<a class="headerlink" href="#restart-all-pods" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/apps/example-go/pods/restart/ HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+[
+    {
+        &quot;name&quot;: &quot;go-v2-web-atots&quot;,
+        &quot;release&quot;: &quot;v2&quot;,
+        &quot;started&quot;: &quot;2016-04-11T21:07:54Z&quot;,
+        &quot;state&quot;: &quot;up&quot;,
+        &quot;type&quot;: &quot;web&quot;
+    }
+]</code></pre>
+
+
+<h3 id="restart-pods-by-type">Restart Pods by Type<a class="headerlink" href="#restart-pods-by-type" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/apps/example-go/pods/web/restart/ HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+[
+    {
+        &quot;name&quot;: &quot;go-v2-web-atots&quot;,
+        &quot;release&quot;: &quot;v2&quot;,
+        &quot;started&quot;: &quot;2016-04-11T21:07:54Z&quot;,
+        &quot;state&quot;: &quot;up&quot;,
+        &quot;type&quot;: &quot;web&quot;
+    }
+]</code></pre>
+
+
+<h3 id="restart-pods-by-type-and-name">Restart Pods by Type and Name<a class="headerlink" href="#restart-pods-by-type-and-name" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/apps/example-go/pods/go-v2-web-atots/restart/ HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+[
+    {
+        &quot;name&quot;: &quot;go-v2-web-atots&quot;,
+        &quot;release&quot;: &quot;v2&quot;,
+        &quot;started&quot;: &quot;2016-04-11T21:07:54Z&quot;,
+        &quot;state&quot;: &quot;up&quot;,
+        &quot;type&quot;: &quot;web&quot;
+    }
+]</code></pre>
+
+
+<h3 id="scale-pods">Scale Pods<a class="headerlink" href="#scale-pods" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/apps/example-go/scale/ HTTP/1.1
+Host: deis.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&quot;web&quot;: 3}</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 204 NO CONTENT
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0</code></pre>
+
+
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<h3 id="list-application-configuration">List Application Configuration<a class="headerlink" href="#list-application-configuration" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/apps/example-go/config/ HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &quot;owner&quot;: &quot;test&quot;,
+    &quot;app&quot;: &quot;example-go&quot;,
+    &quot;values&quot;: {
+      &quot;PLATFORM&quot;: &quot;deis&quot;
+    },
+    &quot;memory&quot;: {},
+    &quot;cpu&quot;: {},
+    &quot;tags&quot;: {},
+    &quot;healthcheck&quot;: {},
+    &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;
+}</code></pre>
+
+
+<h3 id="create-new-config">Create new Config<a class="headerlink" href="#create-new-config" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/apps/example-go/config/ HTTP/1.1
+Host: deis.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&quot;values&quot;: {&quot;HELLO&quot;: &quot;world&quot;, &quot;PLATFORM&quot;: &quot;deis&quot;}}</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 201 CREATED
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &quot;owner&quot;: &quot;test&quot;,
+    &quot;app&quot;: &quot;example-go&quot;,
+    &quot;values&quot;: {
+        &quot;DEIS_APP&quot;: &quot;example-go&quot;,
+        &quot;DEIS_RELEASE&quot;: &quot;v3&quot;,
+        &quot;HELLO&quot;: &quot;world&quot;,
+        &quot;PLATFORM&quot;: &quot;deis&quot;
+
+    },
+    &quot;memory&quot;: {},
+    &quot;cpu&quot;: {},
+    &quot;tags&quot;: {},
+    &quot;healthcheck&quot;: {},
+    &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;
+}</code></pre>
+
+
+<h3 id="unset-config-variable">Unset Config Variable<a class="headerlink" href="#unset-config-variable" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/apps/example-go/config/ HTTP/1.1
+Host: deis.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&quot;values&quot;: {&quot;HELLO&quot;: null}}</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 201 CREATED
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &quot;owner&quot;: &quot;test&quot;,
+    &quot;app&quot;: &quot;example-go&quot;,
+    &quot;values&quot;: {
+        &quot;DEIS_APP&quot;: &quot;example-go&quot;,
+        &quot;DEIS_RELEASE&quot;: &quot;v4&quot;,
+        &quot;PLATFORM&quot;: &quot;deis&quot;
+   },
+    &quot;memory&quot;: {},
+    &quot;cpu&quot;: {},
+    &quot;tags&quot;: {},
+    &quot;healthcheck&quot;: {},
+    &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;
+}</code></pre>
+
+
+<h2 id="domains">Domains<a class="headerlink" href="#domains" title="Permanent link">&para;</a></h2>
+<h3 id="list-application-domains">List Application Domains<a class="headerlink" href="#list-application-domains" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/apps/example-go/domains/ HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &quot;count&quot;: 1,
+    &quot;next&quot;: null,
+    &quot;previous&quot;: null,
+    &quot;results&quot;: [
+        {
+            &quot;app&quot;: &quot;example-go&quot;,
+            &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+            &quot;domain&quot;: &quot;example.example.com&quot;,
+            &quot;owner&quot;: &quot;test&quot;,
+            &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;
+        }
+    ]
+}</code></pre>
+
+
+<h3 id="add-domain">Add Domain<a class="headerlink" href="#add-domain" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/apps/example-go/domains/ HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123
+
+{'domain': 'example.example.com'}</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 201 CREATED
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &quot;app&quot;: &quot;example-go&quot;,
+    &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;domain&quot;: &quot;example.example.com&quot;,
+    &quot;owner&quot;: &quot;test&quot;,
+    &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;
+}</code></pre>
+
+
+<h3 id="remove-domain">Remove Domain<a class="headerlink" href="#remove-domain" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>DELETE /v2/apps/example-go/domains/example.example.com HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 204 NO CONTENT
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0</code></pre>
+
+
+<h2 id="builds">Builds<a class="headerlink" href="#builds" title="Permanent link">&para;</a></h2>
+<h3 id="list-application-builds">List Application Builds<a class="headerlink" href="#list-application-builds" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/apps/example-go/builds/ HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &quot;count&quot;: 1,
+    &quot;next&quot;: null,
+    &quot;previous&quot;: null,
+    &quot;results&quot;: [
+        {
+            &quot;app&quot;: &quot;example-go&quot;,
+            &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+            &quot;dockerfile&quot;: &quot;FROM deis/slugrunner RUN mkdir -p /app WORKDIR /app ENTRYPOINT [\&quot;/runner/init\&quot;] ADD slug.tgz /app ENV GIT_SHA 060da68f654e75fac06dbedd1995d5f8ad9084db&quot;,
+            &quot;image&quot;: &quot;example-go&quot;,
+            &quot;owner&quot;: &quot;test&quot;,
+            &quot;procfile&quot;: {
+                &quot;web&quot;: &quot;example-go&quot;
+            },
+            &quot;sha&quot;: &quot;060da68f&quot;,
+            &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+            &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;
+        }
+    ]
+}</code></pre>
+
+
+<h3 id="create-application-build">Create Application Build<a class="headerlink" href="#create-application-build" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/apps/example-go/builds/ HTTP/1.1
+Host: deis.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&quot;image&quot;: &quot;deis/example-go:latest&quot;}</code></pre>
+
+
+<p>Optional Parameters:</p>
+<pre class="codehilite"><code>{
+    &quot;procfile&quot;: {
+      &quot;web&quot;: &quot;./cmd&quot;
+    }
+}</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 201 CREATED
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &quot;app&quot;: &quot;example-go&quot;,
+    &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;dockerfile&quot;: &quot;&quot;,
+    &quot;image&quot;: &quot;deis/example-go:latest&quot;,
+    &quot;owner&quot;: &quot;test&quot;,
+    &quot;procfile&quot;: {},
+    &quot;sha&quot;: &quot;&quot;,
+    &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;
+}</code></pre>
+
+
+<h2 id="releases">Releases<a class="headerlink" href="#releases" title="Permanent link">&para;</a></h2>
+<h3 id="list-application-releases">List Application Releases<a class="headerlink" href="#list-application-releases" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/apps/example-go/releases/ HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &quot;count&quot;: 3,
+    &quot;next&quot;: null,
+    &quot;previous&quot;: null,
+    &quot;results&quot;: [
+        {
+            &quot;app&quot;: &quot;example-go&quot;,
+            &quot;build&quot;: &quot;202d8e4b-600e-4425-a85c-ffc7ea607f61&quot;,
+            &quot;config&quot;: &quot;ed637ceb-5d32-44bd-9406-d326a777a513&quot;,
+            &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+            &quot;owner&quot;: &quot;test&quot;,
+            &quot;summary&quot;: &quot;test changed nothing&quot;,
+            &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+            &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;,
+            &quot;version&quot;: 3
+        },
+        {
+            &quot;app&quot;: &quot;example-go&quot;,
+            &quot;build&quot;: &quot;202d8e4b-600e-4425-a85c-ffc7ea607f61&quot;,
+            &quot;config&quot;: &quot;95bd6dea-1685-4f78-a03d-fd7270b058d1&quot;,
+            &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+            &quot;owner&quot;: &quot;test&quot;,
+            &quot;summary&quot;: &quot;test deployed 060da68&quot;,
+            &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+            &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;,
+            &quot;version&quot;: 2
+        },
+        {
+            &quot;app&quot;: &quot;example-go&quot;,
+            &quot;build&quot;: null,
+            &quot;config&quot;: &quot;95bd6dea-1685-4f78-a03d-fd7270b058d1&quot;,
+            &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+            &quot;owner&quot;: &quot;test&quot;,
+            &quot;summary&quot;: &quot;test created initial release&quot;,
+            &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+            &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;,
+            &quot;version&quot;: 1
+        }
+    ]
+}</code></pre>
+
+
+<h3 id="list-release-details">List Release Details<a class="headerlink" href="#list-release-details" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/apps/example-go/releases/v2/ HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &quot;app&quot;: &quot;example-go&quot;,
+    &quot;build&quot;: null,
+    &quot;config&quot;: &quot;95bd6dea-1685-4f78-a03d-fd7270b058d1&quot;,
+    &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;owner&quot;: &quot;test&quot;,
+    &quot;summary&quot;: &quot;test created initial release&quot;,
+    &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;,
+    &quot;version&quot;: 1
+}</code></pre>
+
+
+<h3 id="rollback-release">Rollback Release<a class="headerlink" href="#rollback-release" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/apps/example-go/releases/rollback/ HTTP/1.1
+Host: deis.example.com
+Content-Type: application/json
+Authorization: token abc123
+
+{&quot;version&quot;: 1}</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 201 CREATED
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{&quot;version&quot;: 5}</code></pre>
+
+
+<h2 id="keys">Keys<a class="headerlink" href="#keys" title="Permanent link">&para;</a></h2>
+<h3 id="list-keys">List Keys<a class="headerlink" href="#list-keys" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/keys/ HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 201 CREATED
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &quot;count&quot;: 1,
+    &quot;next&quot;: null,
+    &quot;previous&quot;: null,
+    &quot;results&quot;: [
+        {
+            &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+            &quot;id&quot;: &quot;test@example.com&quot;,
+            &quot;owner&quot;: &quot;test&quot;,
+            &quot;public&quot;: &quot;ssh-rsa &lt;...&gt;&quot;,
+            &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+            &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;
+        }
+    ]
+}</code></pre>
+
+
+<h3 id="add-key-to-user">Add Key to User<a class="headerlink" href="#add-key-to-user" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/keys/ HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123
+
+{
+    &quot;id&quot;: &quot;example&quot;,
+    &quot;public&quot;: &quot;ssh-rsa &lt;...&gt;&quot;
+}</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 201 CREATED
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &quot;created&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;id&quot;: &quot;example&quot;,
+    &quot;owner&quot;: &quot;example&quot;,
+    &quot;public&quot;: &quot;ssh-rsa &lt;...&gt;&quot;,
+    &quot;updated&quot;: &quot;2014-01-01T00:00:00UTC&quot;,
+    &quot;uuid&quot;: &quot;de1bf5b5-4a72-4f94-a10c-d2a3741cdf75&quot;
+}</code></pre>
+
+
+<h3 id="remove-key-from-user">Remove Key from User<a class="headerlink" href="#remove-key-from-user" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>DELETE /v2/keys/example HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 204 NO CONTENT
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0</code></pre>
+
+
+<h2 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h2>
+<h3 id="list-application-permissions">List Application Permissions<a class="headerlink" href="#list-application-permissions" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This does not include the app owner.</p>
+</blockquote>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/apps/example-go/perms/ HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &quot;users&quot;: [
+        &quot;test&quot;,
+        &quot;foo&quot;
+    ]
+}</code></pre>
+
+
+<h3 id="create-application-permission">Create Application Permission<a class="headerlink" href="#create-application-permission" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/apps/example-go/perms/ HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123
+
+{&quot;username&quot;: &quot;example&quot;}</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 201 CREATED
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0</code></pre>
+
+
+<h3 id="remove-application-permission">Remove Application Permission<a class="headerlink" href="#remove-application-permission" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>DELETE /v2/apps/example-go/perms/example HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 204 NO CONTENT
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0</code></pre>
+
+
+<h3 id="list-administrators">List Administrators<a class="headerlink" href="#list-administrators" title="Permanent link">&para;</a></h3>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/admin/perms/ HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &quot;count&quot;: 2,
+    &quot;next&quot;: null
+    &quot;previous&quot;: null,
+    &quot;results&quot;: [
+        {
+            &quot;username&quot;: &quot;test&quot;,
+            &quot;is_superuser&quot;: true
+        },
+        {
+            &quot;username&quot;: &quot;foo&quot;,
+            &quot;is_superuser&quot;: true
+        }
+    ]
+}</code></pre>
+
+
+<h3 id="grant-user-administrative-privileges">Grant User Administrative Privileges<a class="headerlink" href="#grant-user-administrative-privileges" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This command requires administrative privileges</p>
+</blockquote>
+<p>Example Request:</p>
+<pre class="codehilite"><code>POST /v2/admin/perms HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123
+
+{&quot;username&quot;: &quot;example&quot;}</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 201 CREATED
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0</code></pre>
+
+
+<h3 id="remove-users-administrative-privileges">Remove User's Administrative Privileges<a class="headerlink" href="#remove-users-administrative-privileges" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This command requires administrative privileges</p>
+</blockquote>
+<p>Example Request:</p>
+<pre class="codehilite"><code>DELETE /v2/admin/perms/example HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 204 NO CONTENT
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0</code></pre>
+
+
+<h2 id="users">Users<a class="headerlink" href="#users" title="Permanent link">&para;</a></h2>
+<h3 id="list-all-users">List all users<a class="headerlink" href="#list-all-users" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>note</strong></p>
+<p>This command requires administrative privileges</p>
+</blockquote>
+<p>Example Request:</p>
+<pre class="codehilite"><code>GET /v2/users HTTP/1.1
+Host: deis.example.com
+Authorization: token abc123</code></pre>
+
+
+<p>Example Response:</p>
+<pre class="codehilite"><code>HTTP/1.1 200 OK
+DEIS_API_VERSION: 2.2
+DEIS_PLATFORM_VERSION: 2.2.0
+Content-Type: application/json
+
+{
+    &quot;count&quot;: 1,
+    &quot;next&quot;: null,
+    &quot;previous&quot;: null,
+    &quot;results&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;last_login&quot;: &quot;2014-10-19T22:01:00.601Z&quot;,
+            &quot;is_superuser&quot;: true,
+            &quot;username&quot;: &quot;test&quot;,
+            &quot;first_name&quot;: &quot;test&quot;,
+            &quot;last_name&quot;: &quot;testerson&quot;,
+            &quot;email&quot;: &quot;test@example.com&quot;,
+            &quot;is_staff&quot;: true,
+            &quot;is_active&quot;: true,
+            &quot;date_joined&quot;: &quot;2014-10-19T22:01:00.601Z&quot;,
+            &quot;groups&quot;: [],
+            &quot;user_permissions&quot;: []
+        }
+    ]
+}</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../v2.3/" class="btn btn-neutral float-right" title="Controller API v2.3">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../v2.1/" class="btn btn-neutral" title="Controller API v2.1"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../v2.1/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../v2.3/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../static/js/foundation.js" defer></script>
+      <script src="../../../static/js/foundation.dropdown.js" defer></script>
+      <script src="../../../static/js/foundation.offcanvas.js" defer></script>
+      <script src="../../../static/js/headroom.min.js" defer></script>
+      <script src="../../../static/js/adjustments.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>
